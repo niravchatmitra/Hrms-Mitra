@@ -1,22 +1,39 @@
 import Link from 'next/link'
 import { NAVIGATION } from '@/lib/constants'
+import { Building, Phone, Calendar, Shield } from 'lucide-react'
 
 export default function CompanyMenu() {
+  const icons = {
+    'About HRMS Mitra': Building,
+    'Contact Us': Phone,
+    'Book a Demo': Calendar,
+    'Security': Shield,
+  }
+
   return (
-    <div className="absolute left-0 top-full pt-2 w-56">
-      <div className="bg-white rounded-lg shadow-xl border border-border p-4 text-text-body">
-        <ul className="space-y-1">
-          {NAVIGATION.company.map((item) => (
-            <li key={item.name}>
+    <div className="absolute left-0 top-full pt-2 w-72">
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        <div className="space-y-1">
+          {NAVIGATION.company.map((item) => {
+            const Icon = icons[item.name as keyof typeof icons] || Building
+            return (
               <Link
+                key={item.name}
                 href={item.href}
-                className="block px-4 py-2.5 rounded-lg hover:bg-background-alt hover:text-primary transition-colors font-medium"
+                className="mega-menu-item"
               >
-                {item.name}
+                <div className="mega-menu-icon">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-semibold text-text-heading text-sm">
+                    {item.name}
+                  </div>
+                </div>
               </Link>
-            </li>
-          ))}
-        </ul>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ export default function ProductModulesSection() {
   return (
     <section className="section-alt">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="mb-6">Everything Your HR Team Needs in One Place</h2>
           <p className="text-lg text-text-body">
             From hiring to retirement, HRMS Mitra covers every stage of the employee lifecycle
@@ -20,33 +20,28 @@ export default function ProductModulesSection() {
           </p>
         </div>
         
-        {/* Featured Grid - First 3 items larger */}
-        <div className="grid md:grid-cols-3 gap-6 mb-6">
+        {/* Featured Grid - First 3 items larger with flat green cards */}
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {FEATURES.slice(0, 3).map((feature) => {
             const Icon = getIcon(feature.icon)
             return (
               <Link
                 key={feature.id}
                 href={feature.href}
-                className="card-hover p-8 group"
+                className="card-flat p-8 group hover:scale-105 transition-transform"
               >
-                <div className="w-16 h-16 bg-primary-extra-light rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-light transition-colors">
-                  <Icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                {/* Outlined icon - no filled background */}
+                <Icon className="w-12 h-12 text-primary stroke-[1.5] mb-4" />
+                <h3 className="text-xl font-bold text-primary mb-3">
                   {feature.name}
                 </h3>
-                <p className="text-text-body mb-4">{feature.shortDescription}</p>
-                <div className="flex items-center text-primary font-medium">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
+                <p className="text-text-body leading-relaxed">{feature.shortDescription}</p>
               </Link>
             )
           })}
         </div>
         
-        {/* Regular Grid - Remaining items */}
+        {/* Regular Grid - Remaining items with flat green cards */}
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
           {FEATURES.slice(3).map((feature) => {
             const Icon = getIcon(feature.icon)
@@ -54,19 +49,14 @@ export default function ProductModulesSection() {
               <Link
                 key={feature.id}
                 href={feature.href}
-                className="card-hover group"
+                className="card-flat group hover:scale-105 transition-transform"
               >
-                <div className="w-12 h-12 bg-primary-extra-light rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary-light transition-colors">
-                  <Icon className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+                {/* Outlined icon - no filled background */}
+                <Icon className="w-10 h-10 text-primary stroke-[1.5] mb-3" />
+                <h4 className="text-lg font-bold text-primary mb-2">
                   {feature.name}
                 </h4>
-                <p className="text-sm text-text-body mb-3">{feature.shortDescription}</p>
-                <div className="flex items-center text-sm text-primary font-medium">
-                  Learn More
-                  <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
-                </div>
+                <p className="text-sm text-text-body leading-relaxed">{feature.shortDescription}</p>
               </Link>
             )
           })}

@@ -43,7 +43,7 @@ export default function OnboardingPage() {
         { title: 'Bulk Campus Hiring', description: 'Onboard multiple campus hires efficiently with standardized processes.' },
         { title: 'International Hires', description: 'Handle complex onboarding for employees joining from different countries.' },
       ]}
-      advantages=[
+      advantages={[
         'Reduce onboarding time by 50% with automation',
         'Improve new hire experience with clear, structured guidance',
         'Ensure compliance by tracking all required documents',

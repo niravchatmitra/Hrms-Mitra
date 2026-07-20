@@ -94,20 +94,42 @@
     @apply px-8 py-4 text-lg;
   }
 
+  /* Flat light-green cards - ChatMitra style */
+  .card-flat {
+    @apply bg-primary-light rounded-2xl p-6 transition-all duration-200;
+  }
+
+  /* White cards with shadow on hover only */
   .card {
-    @apply bg-white rounded-xl border border-border p-6 transition-all duration-200;
+    @apply bg-white rounded-xl p-6 transition-all duration-200;
   }
 
   .card-hover {
-    @apply card hover:shadow-lg hover:border-primary-light hover:-translate-y-1;
+    @apply card hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Mega menu dropdown item */
+  .mega-menu-item {
+    @apply flex items-start gap-4 p-4 rounded-lg hover:bg-primary-extra-light transition-all duration-200 cursor-pointer;
+  }
+
+  .mega-menu-icon {
+    @apply w-10 h-10 flex items-center justify-center rounded-lg bg-white border-2 border-primary flex-shrink-0;
   }
 
   .section {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-28;
   }
 
   .section-alt {
     @apply section bg-background-alt;
+  }
+
+  /* Dark green banner with dot pattern */
+  .banner-dark {
+    @apply bg-primary text-white relative overflow-hidden;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   .input {

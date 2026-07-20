@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Breadcrumbs from '@/components/shared/Breadcrumbs'
 import { ChevronDown, ChevronUp, Search } from 'lucide-react'
 
@@ -35,7 +36,7 @@ const faqs = [
       },
       {
         q: 'Can we upgrade or downgrade our plan?',
-        a: 'Yes, you can upgrade or downgrade your plan as your business needs change. We'll help you transition smoothly.',
+        a: "Yes, you can upgrade or downgrade your plan as your business needs change. We'll help you transition smoothly.",
       },
     ],
   },

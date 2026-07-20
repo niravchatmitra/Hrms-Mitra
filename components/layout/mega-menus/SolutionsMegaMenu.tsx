@@ -1,64 +1,43 @@
 import Link from 'next/link'
 import { NAVIGATION } from '@/lib/constants'
+import { Building2, Briefcase, Users2 } from 'lucide-react'
 
 export default function SolutionsMegaMenu() {
+  const allSolutions = [
+    ...NAVIGATION.solutions.bySize.map(item => ({ ...item, icon: Building2, category: 'By Company Size' })),
+    ...NAVIGATION.solutions.byIndustry.map(item => ({ ...item, icon: Briefcase, category: 'By Industry' })),
+    ...NAVIGATION.solutions.byRole.map(item => ({ ...item, icon: Users2, category: 'By Role' })),
+  ]
+
   return (
-    <div className="absolute left-0 top-full pt-2 w-screen max-w-3xl -ml-32">
-      <div className="bg-white rounded-lg shadow-xl border border-border p-8 text-text-body">
-        <div className="grid grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-sm font-semibold text-text-heading uppercase tracking-wide mb-4">
-              By Company Size
-            </h3>
-            <ul className="space-y-2">
-              {NAVIGATION.solutions.bySize.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="block px-3 py-2 rounded-lg hover:bg-background-alt hover:text-primary transition-colors font-medium"
-                  >
+    <div className="absolute left-0 top-full pt-2 w-screen max-w-3xl">
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        {/* Single column stacked list */}
+        <div className="space-y-1">
+          {allSolutions.map((item) => {
+            const Icon = item.icon
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="mega-menu-item"
+              >
+                {/* Icon in rounded square */}
+                <div className="mega-menu-icon">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                {/* Heading only (no description in solutions) */}
+                <div className="flex-1 min-w-0">
+                  <div className="font-semibold text-text-heading text-sm">
                     {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-text-heading uppercase tracking-wide mb-4">
-              By Industry
-            </h3>
-            <ul className="space-y-2">
-              {NAVIGATION.solutions.byIndustry.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="block px-3 py-2 rounded-lg hover:bg-background-alt hover:text-primary transition-colors font-medium"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-text-heading uppercase tracking-wide mb-4">
-              By Role
-            </h3>
-            <ul className="space-y-2">
-              {NAVIGATION.solutions.byRole.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="block px-3 py-2 rounded-lg hover:bg-background-alt hover:text-primary transition-colors font-medium"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  </div>
+                  <div className="text-sm text-text-muted leading-relaxed">
+                    {item.category}
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Puzzle, Zap, Shield, Headphones } from 'lucide-react'
 
 export default function AddOnsSection() {
@@ -57,9 +58,9 @@ export default function AddOnsSection() {
           <p className="text-text-muted mb-4">
             Interested in add-ons or custom features?
           </p>
-          <a href="/contact" className="text-primary font-semibold hover:underline">
+          <Link href="/contact" className="text-primary font-semibold hover:underline">
             Contact us to discuss your requirements →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

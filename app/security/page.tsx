@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import Breadcrumbs from '@/components/shared/Breadcrumbs'
 import { Shield, Lock, Eye, Server, CheckCircle, AlertCircle } from 'lucide-react'
 
@@ -136,9 +137,9 @@ export default function SecurityPage() {
             <p className="text-text-body mb-6">
               We're happy to discuss our security practices in detail and address any concerns you may have.
             </p>
-            <a href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn-primary">
               Contact Our Security Team
-            </a>
+            </Link>
           </div>
         </div>
       </section>

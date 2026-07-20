@@ -1,22 +1,42 @@
 import Link from 'next/link'
 import { NAVIGATION } from '@/lib/constants'
+import { BookOpen, Book, FileText, HelpCircle, Headphones } from 'lucide-react'
 
 export default function ResourcesMenu() {
+  const icons = {
+    'Blog': BookOpen,
+    'HR Glossary': Book,
+    'HR Guides': FileText,
+    'Payroll Resources': FileText,
+    'HR Templates': FileText,
+    'FAQs': HelpCircle,
+    'Help Centre': Headphones,
+  }
+
   return (
-    <div className="absolute left-0 top-full pt-2 w-64">
-      <div className="bg-white rounded-lg shadow-xl border border-border p-4 text-text-body">
-        <ul className="space-y-1">
-          {NAVIGATION.resources.map((item) => (
-            <li key={item.name}>
+    <div className="absolute left-0 top-full pt-2 w-80">
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        <div className="space-y-1">
+          {NAVIGATION.resources.map((item) => {
+            const Icon = icons[item.name as keyof typeof icons] || FileText
+            return (
               <Link
+                key={item.name}
                 href={item.href}
-                className="block px-4 py-2.5 rounded-lg hover:bg-background-alt hover:text-primary transition-colors font-medium"
+                className="mega-menu-item"
               >
-                {item.name}
+                <div className="mega-menu-icon">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-semibold text-text-heading text-sm">
+                    {item.name}
+                  </div>
+                </div>
               </Link>
-            </li>
-          ))}
-        </ul>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

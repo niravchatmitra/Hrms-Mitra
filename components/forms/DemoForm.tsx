@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { demoFormSchema, type DemoFormData } from '@/lib/form-schemas'
@@ -25,18 +26,27 @@ export default function DemoForm() {
     setSubmitStatus('idle')
 
     try {
-      // TODO: Replace with actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      console.log('Demo form data:', data)
+      const response = await fetch('/api/demo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
       
-      setSubmitStatus('success')
-      reset()
+      const result = await response.json()
       
-      // Redirect to thank you page after 2 seconds
-      setTimeout(() => {
-        window.location.href = '/thank-you?type=demo'
-      }, 2000)
+      if (response.ok && result.success) {
+        setSubmitStatus('success')
+        reset()
+        
+        // Redirect to thank you page after 2 seconds
+        setTimeout(() => {
+          window.location.href = '/thank-you?type=demo'
+        }, 2000)
+      } else {
+        setSubmitStatus('error')
+      }
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -216,9 +226,9 @@ export default function DemoForm() {
         />
         <label htmlFor="consent" className="text-sm text-text-body">
           I agree to the{' '}
-          <a href="/privacy-policy" className="text-primary hover:underline">
+          <Link href="/privacy-policy" className="text-primary hover:underline">
             Privacy Policy
-          </a>{' '}
+          </Link>{' '}
           and consent to being contacted by HRMS Mitra.
         </label>
       </div>

@@ -54,9 +54,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
+  // TODO: Add Google Search Console verification code after domain setup
+  // verification: {
+  //   google: 'your-actual-verification-code',
+  // },
 }
 
 export default function RootLayout({

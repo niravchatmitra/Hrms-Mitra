@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import Breadcrumbs from '@/components/shared/Breadcrumbs'
 
 export const metadata: Metadata = {
@@ -60,9 +61,9 @@ export default function HRGlossaryPage() {
               <p className="text-text-body mb-4">
                 This glossary is continuously updated. If you'd like us to add a specific term, please let us know.
               </p>
-              <a href="/contact" className="text-primary font-semibold hover:underline">
+              <Link href="/contact" className="text-primary font-semibold hover:underline">
                 Suggest a Term →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
