@@ -24,7 +24,7 @@ const config: Config = {
         text: {
           heading: '#17211F',
           body: '#5F6E69',
-          muted: '#83908C',
+          muted: '#586661',
         },
         border: {
           DEFAULT: '#E1E9E6',
@@ -32,7 +32,7 @@ const config: Config = {
         accent: {
           coral: '#E8753A',
         },
-        success: '#168A67',
+        success: '#127A5A',
         warning: '#E8A23A',
         error: '#D95555',
       },

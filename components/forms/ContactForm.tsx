@@ -187,7 +187,7 @@ export default function ContactForm() {
 
       {submitStatus === 'success' && (
         <div className="p-4 bg-success/10 border border-success/20 rounded-lg text-success text-center">
-          Thank you! We'll get back to you soon.
+          Thank you! We&apos;ll get back to you soon.
         </div>
       )}
 

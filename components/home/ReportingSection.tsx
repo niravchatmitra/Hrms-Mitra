@@ -45,7 +45,7 @@ export default function ReportingSection() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Headcount by Department */}
             <div>
-              <h4 className="text-sm font-semibold text-text-heading mb-4">Headcount by Department</h4>
+              <p className="text-sm font-semibold text-text-heading mb-4">Headcount by Department</p>
               <div className="space-y-3">
                 {[
                   { dept: 'Engineering', count: 85, percent: 34 },
@@ -72,7 +72,7 @@ export default function ReportingSection() {
             
             {/* Attendance Trends */}
             <div>
-              <h4 className="text-sm font-semibold text-text-heading mb-4">Monthly Attendance Trends</h4>
+              <p className="text-sm font-semibold text-text-heading mb-4">Monthly Attendance Trends</p>
               <div className="space-y-3">
                 {[
                   { month: 'December', rate: 95.2, status: 'success' },

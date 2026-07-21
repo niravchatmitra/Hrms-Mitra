@@ -69,7 +69,7 @@ export default function IndustryPageLayout({
           <h2 className="text-center mb-12">Common HR Challenges</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {challenges.map((challenge, index) => (
-              <div key={index} className="card">
+              <div key={index} className="bg-background-alt rounded-xl p-6">
                 <h3 className="text-xl font-semibold mb-3 text-error">{challenge.title}</h3>
                 <p className="text-text-body">{challenge.description}</p>
               </div>
@@ -84,7 +84,7 @@ export default function IndustryPageLayout({
           <h2 className="text-center mb-12">How HRMS Mitra Helps</h2>
           <div className="space-y-8 max-w-5xl mx-auto">
             {solutions.map((solution, index) => (
-              <div key={index} className="card-hover p-8">
+              <div key={index} className="bg-background-alt rounded-xl p-8">
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="w-8 h-8 text-success flex-shrink-0 mt-1" />
                   <div>
@@ -107,7 +107,7 @@ export default function IndustryPageLayout({
               <Link
                 key={index}
                 href={module.href}
-                className="card-hover group"
+                className="bg-background-alt rounded-xl p-6 group block"
               >
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                   {module.name}
@@ -129,7 +129,7 @@ export default function IndustryPageLayout({
           <h2 className="text-center mb-12">Key Benefits for Your Industry</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3 bg-white p-6 rounded-xl border border-border">
+              <div key={index} className="flex items-start space-x-3 bg-background-alt p-6 rounded-xl">
                 <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-text-body text-lg">{benefit}</p>
               </div>
@@ -144,7 +144,7 @@ export default function IndustryPageLayout({
           <h2 className="text-center mb-12">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 border border-border">
+              <div key={index} className="bg-background-alt rounded-xl p-6">
                 <h3 className="font-semibold text-text-heading mb-3">{faq.question}</h3>
                 <p className="text-text-body">{faq.answer}</p>
               </div>

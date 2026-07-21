@@ -247,7 +247,7 @@ export default function DemoForm() {
 
       {submitStatus === 'success' && (
         <div className="p-4 bg-success/10 border border-success/20 rounded-lg text-success text-center">
-          Demo booked! We'll contact you shortly to confirm.
+          Demo booked! We&apos;ll contact you shortly to confirm.
         </div>
       )}
 

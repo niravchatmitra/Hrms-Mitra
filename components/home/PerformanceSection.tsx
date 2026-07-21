@@ -52,7 +52,7 @@ export default function PerformanceSection() {
           {/* Visual */}
           <div className="relative">
             <div className="bg-white rounded-2xl shadow-xl border border-border p-8">
-              <h4 className="text-lg font-semibold text-text-heading mb-6">Performance Review</h4>
+              <p className="text-lg font-semibold text-text-heading mb-6">Performance Review</p>
               
               <div className="p-4 bg-gradient-to-br from-primary-extra-light to-primary-light rounded-xl mb-6">
                 <div className="text-sm text-primary mb-2">Overall Rating</div>
@@ -70,7 +70,7 @@ export default function PerformanceSection() {
               </div>
               
               <div className="space-y-4 mb-6">
-                <h5 className="text-sm font-semibold text-text-heading">Goals Progress</h5>
+                <p className="text-sm font-semibold text-text-heading">Goals Progress</p>
                 {[
                   { goal: 'Complete Project Alpha', progress: 90 },
                   { goal: 'Team Leadership Skills', progress: 75 },
@@ -92,7 +92,7 @@ export default function PerformanceSection() {
               </div>
               
               <div className="border-t border-border pt-4">
-                <h5 className="text-sm font-semibold text-text-heading mb-3">Recent Feedback</h5>
+                <p className="text-sm font-semibold text-text-heading mb-3">Recent Feedback</p>
                 <div className="space-y-3">
                   {[
                     { from: 'Manager', feedback: 'Excellent project delivery and team collaboration' },

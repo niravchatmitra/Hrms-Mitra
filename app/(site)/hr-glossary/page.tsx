@@ -59,7 +59,7 @@ export default function HRGlossaryPage() {
             
             <div className="mt-12 p-6 bg-primary-extra-light rounded-xl text-center">
               <p className="text-text-body mb-4">
-                This glossary is continuously updated. If you'd like us to add a specific term, please let us know.
+                This glossary is continuously updated. If you&apos;d like us to add a specific term, please let us know.
               </p>
               <Link href="/contact" className="text-primary font-semibold hover:underline">
                 Suggest a Term →

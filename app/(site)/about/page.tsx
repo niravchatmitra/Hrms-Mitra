@@ -119,7 +119,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Support</h3>
               <p className="text-text-body">
-                We're here to help you succeed, every step of the way.
+                We&apos;re here to help you succeed, every step of the way.
               </p>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
             <h2 className="mb-6">Join Our Growing Community</h2>
             <p className="text-lg text-text-body mb-8 leading-relaxed">
               Businesses across India trust HRMS Mitra to manage their most important asset—their
-              people. We'd love to help your business too.
+              people. We&apos;d love to help your business too.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book-demo" className="btn-primary btn-lg">

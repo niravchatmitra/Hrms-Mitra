@@ -99,6 +99,10 @@
     @apply bg-primary-light rounded-2xl p-6 transition-all duration-200;
   }
 
+  .card-flat :is(p, .text-text-body) {
+    @apply text-text-heading/80;
+  }
+
   /* White cards with shadow on hover only */
   .card {
     @apply bg-white rounded-xl p-6 transition-all duration-200;

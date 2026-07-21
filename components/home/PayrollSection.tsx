@@ -60,7 +60,7 @@ export default function PayrollSection() {
           <div className="relative">
             <div className="bg-white rounded-2xl shadow-xl border border-border p-8">
               <div className="flex items-center justify-between mb-6">
-                <h4 className="text-lg font-semibold text-text-heading">Payroll Summary</h4>
+                <p className="text-lg font-semibold text-text-heading">Payroll Summary</p>
                 <div className="text-sm text-text-muted">December 2024</div>
               </div>
               
@@ -82,7 +82,7 @@ export default function PayrollSection() {
               </div>
               
               <div className="border-t border-border pt-4">
-                <h5 className="text-sm font-semibold text-text-heading mb-3">Breakdown</h5>
+                <p className="text-sm font-semibold text-text-heading mb-3">Breakdown</p>
                 <div className="space-y-3">
                   {[
                     { label: 'PF Contribution', amount: '₹4.8L' },

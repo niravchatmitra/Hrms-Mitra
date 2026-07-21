@@ -34,7 +34,7 @@ export default function HowItWorksSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="mb-6">How It Works</h2>
           <p className="text-lg text-text-body">
-            Get started with HRMS Mitra in four simple steps. We'll guide you through every stage.
+            Get started with HRMS Mitra in four simple steps. We&apos;ll guide you through every stage.
           </p>
         </div>
         

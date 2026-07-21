@@ -58,7 +58,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Site search">
       <div className="container-custom pt-20 pb-10">
         <div className="max-w-2xl mx-auto">
           {/* Search Input */}
@@ -66,16 +66,18 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
             <div className="flex items-center space-x-4 mb-6">
               <Search className="w-6 h-6 text-text-muted flex-shrink-0" />
               <input
-                type="text"
+                type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search pages and resources..."
-                className="flex-1 text-lg outline-none text-text-heading"
+                aria-label="Search pages and resources"
+                className="flex-1 text-lg outline-none text-text-heading focus:ring-2 focus:ring-primary rounded-lg"
                 autoFocus
               />
               <button
+                type="button"
                 onClick={onClose}
-                className="p-2 hover:bg-background-alt rounded-lg transition-colors"
+                className="p-2 hover:bg-background-alt rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 aria-label="Close search"
               >
                 <X className="w-5 h-5 text-text-muted" />

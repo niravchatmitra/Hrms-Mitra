@@ -23,7 +23,7 @@ export default function EmployeeSelfServiceSection() {
                   RK
                 </div>
                 <div>
-                  <h4 className="font-semibold text-text-heading">Rajesh Kumar</h4>
+                  <p className="font-semibold text-text-heading">Rajesh Kumar</p>
                   <p className="text-sm text-text-muted">Product Manager</p>
                 </div>
               </div>
@@ -39,7 +39,7 @@ export default function EmployeeSelfServiceSection() {
                 </div>
               </div>
               
-              <h5 className="text-sm font-semibold text-text-heading mb-3">Quick Actions</h5>
+              <p className="text-sm font-semibold text-text-heading mb-3">Quick Actions</p>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {actions.map((action, i) => {
                   const Icon = action.icon
@@ -56,7 +56,7 @@ export default function EmployeeSelfServiceSection() {
               </div>
               
               <div className="border-t border-border pt-4">
-                <h5 className="text-sm font-semibold text-text-heading mb-3">Recent Payslips</h5>
+                <p className="text-sm font-semibold text-text-heading mb-3">Recent Payslips</p>
                 <div className="space-y-2">
                   {['December 2024', 'November 2024', 'October 2024'].map((month, i) => (
                     <div key={i} className="flex items-center justify-between p-3 bg-background-alt rounded-lg">

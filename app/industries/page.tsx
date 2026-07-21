@@ -75,7 +75,7 @@ export default function IndustriesPage() {
       <section className="section bg-gradient-to-br from-primary to-primary-medium text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-white mb-6">Don't See Your Industry?</h2>
+            <h2 className="text-white mb-6">Don&apos;t See Your Industry?</h2>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               HRMS Mitra is flexible and can be customized for any industry. Contact us to discuss
               your specific requirements.

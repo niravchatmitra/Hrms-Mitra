@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import CookieConsent from '@/components/shared/CookieConsent'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -68,10 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={manrope.variable}>
       <body className={manrope.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <CookieConsent />
+        {children}
       </body>
     </html>
   )

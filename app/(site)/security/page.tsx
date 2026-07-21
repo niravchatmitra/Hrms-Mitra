@@ -59,7 +59,7 @@ export default function SecurityPage() {
             </div>
             <h1 className="mb-6">Your Data Security is Our Priority</h1>
             <p className="text-xl text-text-body leading-relaxed">
-              We understand that you're trusting us with your most sensitive business data. That's why we've built security into every layer of HRMS Mitra.
+              We understand that you&apos;re trusting us with your most sensitive business data. That&apos;s why we&apos;ve built security into every layer of HRMS Mitra.
             </p>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function SecurityPage() {
           <div className="max-w-3xl mx-auto text-center card p-8">
             <h2 className="text-2xl font-semibold mb-4">Questions About Security?</h2>
             <p className="text-text-body mb-6">
-              We're happy to discuss our security practices in detail and address any concerns you may have.
+              We&apos;re happy to discuss our security practices in detail and address any concerns you may have.
             </p>
             <Link href="/contact" className="btn-primary">
               Contact Our Security Team

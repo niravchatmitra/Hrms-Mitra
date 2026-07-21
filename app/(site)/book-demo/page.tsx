@@ -80,7 +80,7 @@ export default function BookDemoPage() {
                   <h3 className="font-semibold text-text-heading">No Obligation</h3>
                 </div>
                 <p className="text-text-body text-sm">
-                  Free demo with no commitment. See if we're the right fit.
+                  Free demo with no commitment. See if we&apos;re the right fit.
                 </p>
               </div>
             </div>

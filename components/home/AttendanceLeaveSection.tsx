@@ -17,7 +17,7 @@ export default function AttendanceLeaveSection() {
           {/* Visual */}
           <div className="order-2 lg:order-1">
             <div className="bg-white rounded-2xl shadow-xl border border-border p-8">
-              <h4 className="text-lg font-semibold text-text-heading mb-6">Today's Attendance</h4>
+              <p className="text-lg font-semibold text-text-heading mb-6">Today&apos;s Attendance</p>
               
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="text-center p-4 bg-success/10 rounded-xl">
@@ -35,7 +35,7 @@ export default function AttendanceLeaveSection() {
               </div>
               
               <div className="border-t border-border pt-4 mb-6">
-                <h5 className="text-sm font-semibold text-text-heading mb-3">Recent Check-ins</h5>
+                <p className="text-sm font-semibold text-text-heading mb-3">Recent Check-ins</p>
                 <div className="space-y-3">
                   {[
                     { name: 'Priya Patel', time: '09:15 AM', status: 'On Time' },
@@ -58,7 +58,7 @@ export default function AttendanceLeaveSection() {
               </div>
               
               <div className="border-t border-border pt-4">
-                <h5 className="text-sm font-semibold text-text-heading mb-3">Leave Requests</h5>
+                <p className="text-sm font-semibold text-text-heading mb-3">Leave Requests</p>
                 <div className="space-y-2">
                   {['Casual Leave - 2 days', 'Sick Leave - 1 day'].map((leave, i) => (
                     <div key={i} className="flex items-center justify-between p-2 bg-warning/5 rounded border border-warning/20">

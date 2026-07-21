@@ -24,7 +24,7 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="mb-6">Get in Touch</h1>
             <p className="text-xl text-text-body leading-relaxed">
-              Have questions about HRMS Mitra? Our team is here to help. Reach out and we'll respond as soon as possible.
+              Have questions about HRMS Mitra? Our team is here to help. Reach out and we&apos;ll respond as soon as possible.
             </p>
           </div>
         </div>

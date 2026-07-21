@@ -77,7 +77,7 @@ export default function FeaturePageLayout({
           <h2 className="text-center mb-12">Key Benefits</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="card-hover">
+              <div key={index} className="bg-background-alt rounded-xl p-6">
                 {benefit.icon && <div className="mb-4">{benefit.icon}</div>}
                 <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
                 <p className="text-text-body">{benefit.description}</p>
@@ -120,7 +120,7 @@ export default function FeaturePageLayout({
           <h2 className="text-center mb-12">Common Use Cases</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {useCases.map((useCase, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 border border-border">
+              <div key={index} className="bg-background-alt rounded-xl p-6">
                 <h3 className="text-lg font-semibold mb-3">{useCase.title}</h3>
                 <p className="text-text-body text-sm">{useCase.description}</p>
               </div>
@@ -135,7 +135,7 @@ export default function FeaturePageLayout({
           <h2 className="text-center mb-12">Why Choose HRMS Mitra?</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {advantages.map((advantage, index) => (
-              <div key={index} className="flex items-start space-x-3 bg-white p-4 rounded-lg">
+              <div key={index} className="flex items-start space-x-3 bg-background-alt p-4 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-text-body">{advantage}</p>
               </div>
@@ -168,7 +168,7 @@ export default function FeaturePageLayout({
           <h2 className="text-center mb-12">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 border border-border">
+              <div key={index} className="bg-background-alt rounded-xl p-6">
                 <h3 className="font-semibold text-text-heading mb-3">{faq.question}</h3>
                 <p className="text-text-body">{faq.answer}</p>
               </div>

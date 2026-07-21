@@ -19,7 +19,7 @@ export default function ThankYouPage() {
           <h1 className="mb-6">Thank You!</h1>
           
           <p className="text-xl text-text-body mb-8 leading-relaxed">
-            We've received your request and our team will get back to you within 24 hours.
+            We&apos;ve received your request and our team will get back to you within 24 hours.
             Check your email for a confirmation.
           </p>
           
@@ -43,7 +43,7 @@ export default function ThankYouPage() {
               </li>
               <li className="flex items-start space-x-2">
                 <span className="text-primary font-bold">2.</span>
-                <span>We'll contact you to schedule a convenient time</span>
+                <span>We&apos;ll contact you to schedule a convenient time</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="text-primary font-bold">3.</span>

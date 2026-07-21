@@ -57,7 +57,7 @@ export default function CoreHRFeatureSection() {
                   AS
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-text-heading">Amit Sharma</h4>
+                  <p className="text-lg font-semibold text-text-heading">Amit Sharma</p>
                   <p className="text-sm text-text-muted">Senior Software Engineer</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function CoreHRFeatureSection() {
               </div>
               
               <div className="border-t border-border pt-4">
-                <h5 className="text-sm font-semibold text-text-heading mb-3">Documents</h5>
+                <p className="text-sm font-semibold text-text-heading mb-3">Documents</p>
                 <div className="space-y-2">
                   {['Offer Letter', 'Joining Form', 'ID Proof', 'Bank Details'].map((doc, i) => (
                     <div key={i} className="flex items-center justify-between p-2 bg-background-alt rounded">

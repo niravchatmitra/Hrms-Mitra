@@ -2,11 +2,11 @@ import { Users, Clock, Calendar, DollarSign, CheckCircle } from 'lucide-react'
 
 export default function HRMSProductPreview() {
   return (
-    <div className="relative">
+    <div className="relative" aria-hidden="true">
       {/* Main Dashboard Card */}
       <div className="bg-white rounded-2xl shadow-2xl border border-border p-6 relative z-10">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-semibold text-text-heading">HR Dashboard</h3>
+          <p className="text-lg font-semibold text-text-heading">HR Dashboard</p>
           <div className="px-3 py-1 bg-success/10 text-success text-sm font-medium rounded-full">
             Live
           </div>
@@ -53,7 +53,7 @@ export default function HRMSProductPreview() {
         
         {/* Pending Approvals */}
         <div className="border-t border-border pt-4">
-          <h4 className="text-sm font-semibold text-text-heading mb-3">Pending Approvals</h4>
+          <p className="text-sm font-semibold text-text-heading mb-3">Pending Approvals</p>
           <div className="space-y-2">
             <div className="flex items-center justify-between p-3 bg-warning/5 rounded-lg border border-warning/20">
               <div className="flex items-center space-x-3">
@@ -65,7 +65,7 @@ export default function HRMSProductPreview() {
                   <div className="text-xs text-text-muted">5 pending</div>
                 </div>
               </div>
-              <div className="text-xs text-warning font-medium">Review</div>
+              <div className="text-xs text-primary font-medium">Review</div>
             </div>
             
             <div className="flex items-center justify-between p-3 bg-primary/5 rounded-lg border border-primary/20">

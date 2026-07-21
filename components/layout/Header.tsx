@@ -48,14 +48,16 @@ export default function Header() {
       {/* Announcement Bar */}
       <div className="bg-primary-dark text-white py-2.5 px-4">
         <div className="container-custom flex items-center justify-center text-sm">
-          <p className="text-center">
+          <p className="text-center text-white">
             Make HR effortless with HRMS Mitra — Book your free product demo today.
-            <Link 
-              href="/book-demo" 
-              className="ml-2 underline hover:text-primary-light font-medium"
+            <a
+              href={getHRMSAppUrl('/book-demo')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 underline hover:text-primary-light font-medium text-white"
             >
               Book Demo
-            </Link>
+            </a>
           </p>
         </div>
       </div>
@@ -81,9 +83,14 @@ export default function Header() {
                 onMouseEnter={() => handleMenuEnter('products')}
                 onMouseLeave={handleMenuLeave}
               >
-                <button className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors">
+                <button
+                  type="button"
+                  aria-expanded={activeMenu === 'products'}
+                  aria-haspopup="true"
+                  className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                >
                   <span className="font-medium">Products</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
                 </button>
                 {activeMenu === 'products' && <ProductsMegaMenu />}
               </div>
@@ -94,9 +101,14 @@ export default function Header() {
                 onMouseEnter={() => handleMenuEnter('solutions')}
                 onMouseLeave={handleMenuLeave}
               >
-                <button className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors">
+                <button
+                  type="button"
+                  aria-expanded={activeMenu === 'solutions'}
+                  aria-haspopup="true"
+                  className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                >
                   <span className="font-medium">Solutions</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
                 </button>
                 {activeMenu === 'solutions' && <SolutionsMegaMenu />}
               </div>
@@ -123,9 +135,14 @@ export default function Header() {
                 onMouseEnter={() => handleMenuEnter('resources')}
                 onMouseLeave={handleMenuLeave}
               >
-                <button className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors">
+                <button
+                  type="button"
+                  aria-expanded={activeMenu === 'resources'}
+                  aria-haspopup="true"
+                  className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                >
                   <span className="font-medium">Resources</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
                 </button>
                 {activeMenu === 'resources' && <ResourcesMenu />}
               </div>
@@ -136,9 +153,14 @@ export default function Header() {
                 onMouseEnter={() => handleMenuEnter('company')}
                 onMouseLeave={handleMenuLeave}
               >
-                <button className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors">
+                <button
+                  type="button"
+                  aria-expanded={activeMenu === 'company'}
+                  aria-haspopup="true"
+                  className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                >
                   <span className="font-medium">Company</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
                 </button>
                 {activeMenu === 'company' && <CompanyMenu />}
               </div>
@@ -148,8 +170,9 @@ export default function Header() {
             <div className="flex items-center space-x-3">
               {/* Search */}
               <button
+                type="button"
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 rounded-lg hover:bg-primary-hover transition-colors"
+                className="p-2 rounded-lg hover:bg-primary-hover transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                 aria-label="Search"
               >
                 <Search className="w-5 h-5" />
@@ -164,18 +187,22 @@ export default function Header() {
               </a>
 
               {/* Get Free Demo */}
-              <Link
-                href="/book-demo"
+              <a
+                href={getHRMSAppUrl('/book-demo')}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hidden md:inline-flex btn bg-white text-primary hover:bg-primary-extra-light btn-sm"
               >
                 Get Free Demo
-              </Link>
+              </a>
 
               {/* Mobile Menu Toggle */}
               <button
+                type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg hover:bg-primary-hover transition-colors"
+                className="lg:hidden p-2 rounded-lg hover:bg-primary-hover transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                 aria-label="Toggle menu"
+                aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
                   <X className="w-6 h-6" />
