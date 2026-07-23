@@ -29,11 +29,11 @@ export default function HowItWorksSection() {
   ]
 
   return (
-    <section className="section-alt">
+    <section className="py-24 bg-white">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-6">How It Works</h2>
-          <p className="text-lg text-text-body">
+          <h2 className="font-serif text-4xl lg:text-5xl text-text-heading mb-6">How It Works</h2>
+          <p className="text-lg text-text-body leading-relaxed">
             Get started with HRMS Mitra in four simple steps. We&apos;ll guide you through every stage.
           </p>
         </div>
@@ -45,20 +45,20 @@ export default function HowItWorksSection() {
               <div key={index} className="relative">
                 {/* Connecting Line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-primary-light" />
+                  <div className="hidden lg:block absolute top-16 left-1/2 w-full h-0.5 bg-primary/20" />
                 )}
                 
-                <div className="relative bg-white rounded-xl p-6 border border-border hover:border-primary-light hover:shadow-lg transition-all">
-                  <div className="absolute -top-4 left-6 w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-lg shadow-md">
+                <div className="relative card-cream p-8 hover:shadow-large transition-all">
+                  <div className="absolute -top-5 left-8 w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-medium">
                     {step.number}
                   </div>
                   
-                  <div className="mt-8 mb-4">
-                    <div className="w-14 h-14 bg-primary-extra-light rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-7 h-7 text-primary" />
+                  <div className="mt-10 mb-4">
+                    <div className="icon-line-art w-14 h-14 mb-6">
+                      <Icon className="w-8 h-8" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                    <p className="text-text-body text-sm">{step.description}</p>
+                    <h3 className="font-serif text-lg font-semibold text-text-heading mb-3 leading-tight">{step.title}</h3>
+                    <p className="text-text-body text-sm leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               </div>

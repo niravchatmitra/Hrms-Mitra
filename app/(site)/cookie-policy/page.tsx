@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Breadcrumbs from '@/components/shared/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy - HRMS Mitra',
@@ -9,26 +8,20 @@ export const metadata: Metadata = {
 export default function CookiePolicyPage() {
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Cookie Policy', href: '/cookie-policy' },
-        ]}
-      />
-      
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
-        <div className="container-custom">
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Cookie Policy</h1>
-            <p className="text-text-body">Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            <h1 className="mb-4 text-white">Cookie Policy</h1>
+            <p className="text-white/90">Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
           </div>
         </div>
       </section>
       
-      <section className="section-alt">
+      <section className="py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-8 md:p-12 shadow-soft space-y-8">
+            <div className="bg-white rounded-xl p-8 md:p-12 shadow-soft space-y-6">
               <div>
                 <h2 className="text-2xl font-semibold mb-4">What Are Cookies?</h2>
                 <p className="text-text-body leading-relaxed">

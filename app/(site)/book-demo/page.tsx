@@ -26,22 +26,11 @@ export default function BookDemoPage() {
         ]}
       />
       
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
+      <section className="py-12 bg-background-alt">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Book Your Free Demo</h1>
-            <p className="text-xl text-text-body leading-relaxed">
-              See how HRMS Mitra can simplify your HR operations. Schedule a personalized demo with our team.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <section className="section-alt">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-8">
             {/* Demo Benefits */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-semibold mb-6">What to Expect</h2>
                 <ul className="space-y-4">
@@ -85,10 +74,10 @@ export default function BookDemoPage() {
               </div>
             </div>
             
-            {/* Demo Form */}
+            {/* Demo Form - Green Background */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-xl border border-border p-8">
-                <h2 className="text-2xl font-semibold mb-6">Schedule Your Demo</h2>
+              <div className="bg-primary rounded-2xl shadow-xl p-8">
+                <h2 className="text-2xl font-semibold mb-6 text-white">Schedule Your Demo</h2>
                 <DemoForm />
               </div>
             </div>

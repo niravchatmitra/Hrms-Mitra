@@ -51,24 +51,36 @@ export default function SecurityPage() {
         ]}
       />
       
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
-        <div className="container-custom">
+      <section className="relative bg-primary min-h-[400px] flex items-center overflow-hidden">
+        {/* Decorative pattern overlay */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(135deg, transparent 25%, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.05) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.05) 75%)`,
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+        
+        {/* Abstract HRMS icon shapes - blur effect */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+        
+        <div className="container-custom relative z-10 py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-light rounded-full mb-6">
-              <Shield className="w-10 h-10 text-primary" />
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+              <Shield className="w-10 h-10 text-white" />
             </div>
-            <h1 className="mb-6">Your Data Security is Our Priority</h1>
-            <p className="text-xl text-text-body leading-relaxed">
+            <h1 className="mb-6 text-white">Your Data Security is Our Priority</h1>
+            <p className="text-xl text-white/90 leading-relaxed">
               We understand that you&apos;re trusting us with your most sensitive business data. That&apos;s why we&apos;ve built security into every layer of HRMS Mitra.
             </p>
           </div>
         </div>
       </section>
       
-      <section className="section-alt">
+      <section className="py-12 bg-background-alt">
         <div className="container-custom">
           <h2 className="text-center mb-12">Security Features</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {securityFeatures.map((feature, index) => {
               const Icon = feature.icon
               return (

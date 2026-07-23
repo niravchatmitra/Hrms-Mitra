@@ -18,11 +18,23 @@ export default function AboutPage() {
         ]}
       />
       
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
-        <div className="container-custom">
+      <section className="relative bg-primary min-h-[400px] flex items-center overflow-hidden">
+        {/* Decorative pattern overlay */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(135deg, transparent 25%, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.05) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.05) 75%)`,
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+        
+        {/* Abstract HRMS icon shapes - blur effect */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+        
+        <div className="container-custom relative z-10 py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">About HRMS Mitra</h1>
-            <p className="text-xl text-text-body leading-relaxed">
+            <h1 className="mb-6 text-white">About HRMS Mitra</h1>
+            <p className="text-xl text-white/90 leading-relaxed">
               We believe HR should empower businesses to grow, not hold them back with paperwork
               and manual processes. HRMS Mitra was built to make HR simple, efficient, and accessible
               for Indian businesses of all sizes.

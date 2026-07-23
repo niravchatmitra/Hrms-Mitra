@@ -4,18 +4,32 @@ import { cn } from '@/lib/utils'
 interface LogoProps {
   className?: string
   showTagline?: boolean
+  variant?: 'light' | 'dark'
 }
 
-export default function Logo({ className, showTagline = false }: LogoProps) {
+export default function Logo({ className, showTagline = false, variant = 'light' }: LogoProps) {
   return (
-    <div className={cn('flex items-center space-x-2', className)}>
-      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/10">
-        <Building2 className="w-6 h-6" />
+    <div className={cn('flex items-center gap-2', className)}>
+      <div className={cn(
+        'flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0',
+        variant === 'light' ? 'bg-primary text-white' : 'bg-white/10 text-white'
+      )}>
+        <Building2 className="w-5 h-5" />
       </div>
-      <div>
-        <div className="text-xl font-bold leading-tight">HRMS Mitra</div>
+      <div className="whitespace-nowrap">
+        <div className={cn(
+          'text-[19px] font-bold leading-none',
+          variant === 'light' ? 'text-[#17332D]' : 'text-white'
+        )}>
+          HRMS Mitra
+        </div>
         {showTagline && (
-          <div className="text-xs opacity-90 leading-tight">Simple HR. Smarter Workplaces.</div>
+          <div className={cn(
+            'text-[10px] leading-tight mt-0.5',
+            variant === 'light' ? 'text-text-muted' : 'text-white/90'
+          )}>
+            Simple HR. Smarter Workplaces.
+          </div>
         )}
       </div>
     </div>

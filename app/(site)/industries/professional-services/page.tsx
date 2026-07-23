@@ -19,6 +19,8 @@ export default function ProfessionalServicesPage() {
       icon={<Briefcase className="w-10 h-10 text-primary" />}
       title="HRMS for Consulting and Professional Services Firms"
       description="Manage your professional workforce effectively. Track billable hours, monitor utilization rates, handle project assignments, and optimize resource allocation."
+      heroImage="/images/industries/professional-services-hero.jpg"
+      heroImageAlt="Professional corporate office and business consulting workspace with modern facilities"
       challenges={[
         { title: 'Billable Hour Tracking', description: 'Accurately tracking and billing client hours while managing non-billable time.' },
         { title: 'Resource Utilization', description: 'Optimizing consultant allocation across multiple client projects.' },

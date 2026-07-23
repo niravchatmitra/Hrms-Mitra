@@ -19,6 +19,8 @@ export default function ManufacturingPage() {
       icon={<Factory className="w-10 h-10 text-primary" />}
       title="HRMS for Manufacturing and Production Companies"
       description="Manage your factory workforce efficiently. Handle multiple shifts, track production attendance, ensure compliance, and manage both floor workers and office staff."
+      heroImage="/images/industries/manufacturing-hero.jpg"
+      heroImageAlt="Modern manufacturing facility with advanced CNC machinery and industrial equipment"
       challenges={[
         { title: 'Shift Management', description: 'Managing multiple shifts, rotations, and production schedules for floor workers.' },
         { title: 'Attendance Tracking', description: 'Accurate timekeeping for large workforces with biometric integration.' },

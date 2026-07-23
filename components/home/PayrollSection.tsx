@@ -11,46 +11,46 @@ export default function PayrollSection() {
   ]
 
   return (
-    <section className="section">
+    <section className="py-24 bg-background-alt">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <div className="inline-flex items-center px-3 py-1 bg-primary-light rounded-full mb-4">
-              <span className="text-sm font-medium text-primary">Payroll Management</span>
+            <div className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full mb-6">
+              <span className="text-sm font-semibold text-primary">Payroll Management</span>
             </div>
             
-            <h2 className="mb-6">
-              Run Accurate Indian Payroll With Greater Confidence.
+            <h2 className="font-serif text-4xl lg:text-5xl text-text-heading mb-6 leading-tight">
+              Run Accurate Indian Payroll With Greater Confidence
             </h2>
             
-            <p className="text-lg text-text-body mb-8">
+            <p className="text-lg text-text-body mb-10 leading-relaxed">
               Process monthly payroll automatically with attendance integration, statutory compliance,
               and flexible salary components. Generate payslips and reports with complete accuracy.
             </p>
             
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-10">
               {features.map((feature, index) => {
                 const Icon = feature.icon
                 return (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary-extra-light rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-primary" />
+                  <div key={index} className="flex items-center space-x-4">
+                    <div className="icon-line-art flex-shrink-0">
+                      <Icon className="w-6 h-6" strokeWidth={1.5} />
                     </div>
-                    <span className="text-text-heading font-medium">{feature.text}</span>
+                    <span className="text-text-heading font-medium text-lg">{feature.text}</span>
                   </div>
                 )
               })}
             </div>
             
-            <div className="p-4 bg-background-alt rounded-lg border-l-4 border-primary mb-8">
-              <p className="text-sm text-text-body">
-                <strong className="text-text-heading">Note:</strong> HRMS Mitra supports Indian payroll
+            <div className="card-cream p-5 border-l-4 border-primary mb-10">
+              <p className="text-sm text-text-body leading-relaxed">
+                <strong className="text-text-heading font-semibold">Note:</strong> HRMS Mitra supports Indian payroll
                 calculations. Please verify statutory compliance requirements with your financial advisor.
               </p>
             </div>
             
-            <Link href="/features/payroll-management" className="btn-primary">
+            <Link href="/features/payroll-management" className="btn-primary btn-lg">
               Explore Payroll
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
@@ -58,31 +58,31 @@ export default function PayrollSection() {
           
           {/* Visual */}
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-xl border border-border p-8">
-              <div className="flex items-center justify-between mb-6">
-                <p className="text-lg font-semibold text-text-heading">Payroll Summary</p>
+            <div className="card-white p-10">
+              <div className="flex items-center justify-between mb-8">
+                <p className="text-xl font-serif font-semibold text-text-heading">Payroll Summary</p>
                 <div className="text-sm text-text-muted">December 2024</div>
               </div>
               
-              <div className="p-6 bg-gradient-to-br from-primary to-primary-medium rounded-xl text-white mb-6">
+              <div className="p-8 bg-gradient-to-br from-primary to-primary-medium rounded-2xl text-white mb-8 shadow-soft">
                 <div className="text-sm opacity-90 mb-2">Total Payroll</div>
                 <div className="text-4xl font-bold mb-1">₹42,18,500</div>
                 <div className="text-sm opacity-90">248 employees</div>
               </div>
               
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="p-4 bg-background-alt rounded-lg">
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="p-5 bg-background-alt rounded-xl">
                   <div className="text-xs text-text-muted mb-1">Gross Salary</div>
                   <div className="text-xl font-semibold text-text-heading">₹52.4L</div>
                 </div>
-                <div className="p-4 bg-background-alt rounded-lg">
+                <div className="p-5 bg-background-alt rounded-xl">
                   <div className="text-xs text-text-muted mb-1">Deductions</div>
                   <div className="text-xl font-semibold text-text-heading">₹10.2L</div>
                 </div>
               </div>
               
-              <div className="border-t border-border pt-4">
-                <p className="text-sm font-semibold text-text-heading mb-3">Breakdown</p>
+              <div className="border-t border-border-light pt-6">
+                <p className="text-sm font-semibold text-text-heading mb-4">Breakdown</p>
                 <div className="space-y-3">
                   {[
                     { label: 'PF Contribution', amount: '₹4.8L' },

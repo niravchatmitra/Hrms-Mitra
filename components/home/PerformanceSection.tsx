@@ -11,39 +11,39 @@ export default function PerformanceSection() {
   ]
 
   return (
-    <section className="section-alt">
+    <section className="py-24 bg-white">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <div className="inline-flex items-center px-3 py-1 bg-primary-light rounded-full mb-4">
-              <span className="text-sm font-medium text-primary">Performance Management</span>
+            <div className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full mb-6">
+              <span className="text-sm font-semibold text-primary">Performance Management</span>
             </div>
             
-            <h2 className="mb-6">
-              Turn Employee Goals Into Measurable Progress.
+            <h2 className="font-serif text-4xl lg:text-5xl text-text-heading mb-6 leading-tight">
+              Turn Employee Goals Into Measurable Progress
             </h2>
             
-            <p className="text-lg text-text-body mb-8">
+            <p className="text-lg text-text-body mb-10 leading-relaxed">
               Set clear objectives, conduct structured reviews, and track employee development with
               continuous feedback and performance insights.
             </p>
             
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-10">
               {features.map((feature, index) => {
                 const Icon = feature.icon
                 return (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-primary-extra-light rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-primary" />
+                  <div key={index} className="flex items-center space-x-4">
+                    <div className="icon-line-art flex-shrink-0">
+                      <Icon className="w-6 h-6" strokeWidth={1.5} />
                     </div>
-                    <span className="text-text-heading font-medium">{feature.text}</span>
+                    <span className="text-text-heading font-medium text-lg">{feature.text}</span>
                   </div>
                 )
               })}
             </div>
             
-            <Link href="/features/performance-management" className="btn-primary">
+            <Link href="/features/performance-management" className="btn-primary btn-lg">
               Explore Performance Management
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
@@ -51,12 +51,12 @@ export default function PerformanceSection() {
           
           {/* Visual */}
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-xl border border-border p-8">
-              <p className="text-lg font-semibold text-text-heading mb-6">Performance Review</p>
+            <div className="card-cream p-10">
+              <p className="text-xl font-serif font-semibold text-text-heading mb-8">Performance Review</p>
               
-              <div className="p-4 bg-gradient-to-br from-primary-extra-light to-primary-light rounded-xl mb-6">
-                <div className="text-sm text-primary mb-2">Overall Rating</div>
-                <div className="flex items-center space-x-2 mb-2">
+              <div className="p-6 bg-white rounded-2xl mb-8 shadow-soft">
+                <div className="text-sm text-primary font-semibold mb-3">Overall Rating</div>
+                <div className="flex items-center space-x-2 mb-3">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star
                       key={star}
@@ -66,10 +66,10 @@ export default function PerformanceSection() {
                     />
                   ))}
                 </div>
-                <div className="text-2xl font-bold text-primary">4.0 / 5.0</div>
+                <div className="text-3xl font-bold text-primary">4.0 / 5.0</div>
               </div>
               
-              <div className="space-y-4 mb-6">
+              <div className="space-y-5 mb-8">
                 <p className="text-sm font-semibold text-text-heading">Goals Progress</p>
                 {[
                   { goal: 'Complete Project Alpha', progress: 90 },
@@ -78,12 +78,12 @@ export default function PerformanceSection() {
                 ].map((item, i) => (
                   <div key={i}>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-text-heading">{item.goal}</span>
-                      <span className="text-sm font-semibold text-primary">{item.progress}%</span>
+                      <span className="text-sm font-medium text-text-heading">{item.goal}</span>
+                      <span className="text-sm font-bold text-primary">{item.progress}%</span>
                     </div>
-                    <div className="w-full bg-background-alt rounded-full h-2">
+                    <div className="w-full bg-background-alt rounded-full h-2.5">
                       <div
-                        className="bg-primary rounded-full h-2 transition-all"
+                        className="bg-primary rounded-full h-2.5 transition-all"
                         style={{ width: `${item.progress}%` }}
                       />
                     </div>
@@ -91,16 +91,16 @@ export default function PerformanceSection() {
                 ))}
               </div>
               
-              <div className="border-t border-border pt-4">
-                <p className="text-sm font-semibold text-text-heading mb-3">Recent Feedback</p>
+              <div className="border-t border-border-light pt-6">
+                <p className="text-sm font-semibold text-text-heading mb-4">Recent Feedback</p>
                 <div className="space-y-3">
                   {[
                     { from: 'Manager', feedback: 'Excellent project delivery and team collaboration' },
                     { from: 'Peer Review', feedback: 'Strong technical skills and mentorship' },
                   ].map((item, i) => (
-                    <div key={i} className="p-3 bg-background-alt rounded-lg">
-                      <div className="text-xs font-semibold text-primary mb-1">{item.from}</div>
-                      <div className="text-sm text-text-body">{item.feedback}</div>
+                    <div key={i} className="p-4 bg-white rounded-lg shadow-soft">
+                      <div className="text-xs font-bold text-primary mb-2">{item.from}</div>
+                      <div className="text-sm text-text-body leading-relaxed">{item.feedback}</div>
                     </div>
                   ))}
                 </div>

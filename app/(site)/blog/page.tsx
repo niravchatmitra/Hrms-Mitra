@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Breadcrumbs from '@/components/shared/Breadcrumbs'
 import { Calendar, User, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -39,31 +38,25 @@ const samplePosts = [
 export default function BlogPage() {
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Blog', href: '/blog' },
-        ]}
-      />
-      
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
-        <div className="container-custom">
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">HR Insights & Resources</h1>
-            <p className="text-xl text-text-body leading-relaxed">
+            <h1 className="mb-6 text-white">HR Insights & Resources</h1>
+            <p className="text-xl text-white/90 leading-relaxed">
               Expert advice, practical tips, and industry insights to help you manage your workforce better.
             </p>
           </div>
         </div>
       </section>
       
-      <section className="section-alt">
+      <section className="py-12">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {samplePosts.map((post) => (
               <article key={post.slug} className="card-hover group">
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-primary-light text-primary text-sm font-medium rounded-full">
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
                     {post.category}
                   </span>
                 </div>
@@ -98,8 +91,8 @@ export default function BlogPage() {
             ))}
           </div>
           
-          <div className="mt-12 text-center">
-            <div className="inline-block p-6 bg-white rounded-xl border border-border">
+          <div className="mt-8 text-center">
+            <div className="inline-block p-6 bg-primary/5 rounded-xl border border-primary/10">
               <p className="text-text-body mb-4">
                 📝 Blog content coming soon. Check back for regular updates on HR best practices.
               </p>

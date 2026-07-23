@@ -10,11 +10,11 @@ export default function IndustriesSection() {
   }
 
   return (
-    <section className="section">
+    <section className="py-24 bg-background-alt">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-6">Built for Every Industry</h2>
-          <p className="text-lg text-text-body">
+          <h2 className="font-serif text-4xl lg:text-5xl text-text-heading mb-6">Built for Every Industry</h2>
+          <p className="text-lg text-text-body leading-relaxed">
             From startups to enterprises, HRMS Mitra adapts to the unique HR needs of different
             industries across India.
           </p>
@@ -27,20 +27,20 @@ export default function IndustriesSection() {
               <Link
                 key={industry.id}
                 href={industry.href}
-                className="group card-hover"
+                className="group card-white p-8 hover:shadow-large transition-all"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="w-14 h-14 bg-primary-extra-light rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary-light transition-colors">
-                    <Icon className="w-7 h-7 text-primary" />
+                <div className="flex items-start space-x-5">
+                  <div className="icon-line-art flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Icon className="w-8 h-8" strokeWidth={1.5} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="font-serif text-xl font-semibold text-text-heading mb-2 group-hover:text-primary transition-colors">
                       {industry.name}
                     </h3>
-                    <p className="text-sm text-text-body mb-3">
+                    <p className="text-sm text-text-body mb-4 leading-relaxed">
                       HR solutions tailored for {industry.name.toLowerCase()} businesses.
                     </p>
-                    <div className="flex items-center text-primary font-medium text-sm">
+                    <div className="flex items-center text-primary font-semibold text-sm">
                       Learn More
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -52,7 +52,7 @@ export default function IndustriesSection() {
         </div>
         
         <div className="text-center mt-12">
-          <Link href="/industries" className="btn-secondary">
+          <Link href="/industries" className="btn-secondary btn-lg">
             View All Industries
             <ArrowRight className="w-5 h-5 ml-2" />
           </Link>

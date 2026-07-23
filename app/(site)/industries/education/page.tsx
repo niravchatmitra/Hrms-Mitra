@@ -19,6 +19,8 @@ export default function EducationPage() {
       icon={<GraduationCap className="w-10 h-10 text-primary" />}
       title="HRMS for Schools, Colleges and Educational Institutions"
       description="Manage your academic workforce efficiently. Handle teaching and non-teaching staff, track qualifications, align with academic calendars, and process payroll accurately."
+      heroImage="/images/industries/education-hero.jpg"
+      heroImageAlt="Modern classroom inside an educational institution with desks and learning environment"
       challenges={[
         { title: 'Academic Calendar Alignment', description: 'Aligning HR operations with academic calendars, vacations, and examination periods.' },
         { title: 'Qualification Tracking', description: 'Maintaining records of degrees, certifications, and continuous professional development.' },

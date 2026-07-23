@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import * as Icons from 'lucide-react'
 import { INDUSTRIES } from '@/lib/constants'
-import Breadcrumbs from '@/components/shared/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Industries We Serve - HRMS for Every Sector | HRMS Mitra',
@@ -22,18 +21,12 @@ export default function IndustriesPage() {
 
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Industries', href: '/industries' },
-        ]}
-      />
-      
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
-        <div className="container-custom">
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">HRMS Solutions Built for Your Industry</h1>
-            <p className="text-xl text-text-body leading-relaxed">
+            <h1 className="mb-6 text-white">HRMS Solutions Built for Your Industry</h1>
+            <p className="text-xl text-white/90 leading-relaxed">
               From startups to enterprises, across diverse sectors—HRMS Mitra adapts to the unique
               HR challenges and workflows of your industry.
             </p>
@@ -41,7 +34,7 @@ export default function IndustriesPage() {
         </div>
       </section>
       
-      <section className="section-alt">
+      <section className="py-12">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {INDUSTRIES.map((industry) => {
@@ -52,8 +45,8 @@ export default function IndustriesPage() {
                   href={industry.href}
                   className="group card-hover p-8"
                 >
-                  <div className="w-16 h-16 bg-primary-extra-light rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-light transition-colors">
-                    <Icon className="w-8 h-8 text-primary" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+                    <Icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <h2 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
                     {industry.name}
@@ -72,15 +65,16 @@ export default function IndustriesPage() {
         </div>
       </section>
       
-      <section className="section bg-gradient-to-br from-primary to-primary-medium text-white">
-        <div className="container-custom">
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-white mb-6">Don&apos;t See Your Industry?</h2>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               HRMS Mitra is flexible and can be customized for any industry. Contact us to discuss
               your specific requirements.
             </p>
-            <Link href="/contact" className="btn bg-white text-primary hover:bg-primary-extra-light btn-lg">
+            <Link href="/contact" className="btn bg-white text-primary hover:bg-white/90 btn-lg">
               Contact Sales
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>

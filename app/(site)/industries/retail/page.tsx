@@ -19,6 +19,8 @@ export default function RetailPage() {
       icon={<ShoppingBag className="w-10 h-10 text-primary" />}
       title="HRMS for Retail Chains and Stores"
       description="Manage your retail workforce across multiple locations. Track store attendance, process sales incentives, reduce turnover, and ensure consistent HR policies."
+      heroImage="/images/industries/retail-hero.jpg"
+      heroImageAlt="Premium modern retail store interior with organized product displays and merchandising"
       challenges={[
         { title: 'Multi-Location Management', description: 'Managing employees across multiple stores and locations with different local needs.' },
         { title: 'High Employee Turnover', description: 'Retail faces frequent resignations requiring constant hiring and training.' },

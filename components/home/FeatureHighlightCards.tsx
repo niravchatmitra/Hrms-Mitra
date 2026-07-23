@@ -6,10 +6,10 @@ const HRMS_APP_URL = process.env.NEXT_PUBLIC_HRMS_APP_URL || 'https://app.hrmsmi
 const cards = [
   {
     icon: MessageSquare,
-    iconColor: 'text-green-600',
-    iconBg: 'bg-green-50',
+    iconColor: 'text-primary',
+    iconBg: 'bg-primary-extra-light',
     tag: '🏆 Key Differentiator',
-    tagColor: 'bg-green-100 text-green-700',
+    tagColor: 'bg-primary-light text-primary',
     title: 'WhatsApp-Native HR Alerts',
     blurb: 'The only HRMS that sends payslips, leave approvals, attendance alerts & onboarding tasks directly to employees\' WhatsApp — zero app installs.',
     image: '/images/feature-whatsapp.jpg',
@@ -18,8 +18,8 @@ const cards = [
   },
   {
     icon: Shield,
-    iconColor: 'text-[#075E54]',
-    iconBg: 'bg-[#EFF8F5]',
+    iconColor: 'text-primary',
+    iconBg: 'bg-primary-extra-light',
     tag: '📋 Compliance Ready',
     tagColor: 'bg-primary-light text-primary',
     title: 'Payroll & Statutory Compliance',

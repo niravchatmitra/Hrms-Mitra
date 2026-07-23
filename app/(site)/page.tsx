@@ -1,10 +1,18 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/home/HeroSection'
 import ClientTrustSection from '@/components/home/ClientTrustSection'
-import FeatureHighlightCards from '@/components/home/FeatureHighlightCards'
-import AllInOnePlatformSection from '@/components/home/AllInOnePlatformSection'
-import SocialProofSection from '@/components/home/SocialProofSection'
-import IntegrationsSection from '@/components/home/IntegrationsSection'
+import HRProblemsSection from '@/components/home/HRProblemsSection'
+import ProductModulesSection from '@/components/home/ProductModulesSection'
+import CoreHRFeatureSection from '@/components/home/CoreHRFeatureSection'
+import AttendanceLeaveSection from '@/components/home/AttendanceLeaveSection'
+import PayrollSection from '@/components/home/PayrollSection'
+import EmployeeSelfServiceSection from '@/components/home/EmployeeSelfServiceSection'
+import RecruitmentOnboardingSection from '@/components/home/RecruitmentOnboardingSection'
+import PerformanceSection from '@/components/home/PerformanceSection'
+import ReportingSection from '@/components/home/ReportingSection'
+import WhyHRMSMitraSection from '@/components/home/WhyHRMSMitraSection'
+import HowItWorksSection from '@/components/home/HowItWorksSection'
+import IndustriesSection from '@/components/home/IndustriesSection'
 import TestimonialsSection from '@/components/home/TestimonialsSection'
 import FAQSection from '@/components/home/FAQSection'
 import FinalCTASection from '@/components/home/FinalCTASection'
@@ -41,31 +49,22 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* ① Hero — headline + module pills + CTA */}
       <HeroSection />
-
-      {/* ② Client trust / logo marquee strip */}
       <ClientTrustSection />
-
-      {/* ③ 3 Feature highlight cards (WhatsApp / Payroll / AI) */}
-      <FeatureHighlightCards />
-
-      {/* ④ "All your HR, one platform" — 6 alternating module blocks */}
-      <AllInOnePlatformSection />
-
-      {/* ⑤ Social proof stats row + primary CTA + Case Studies link */}
-      <SocialProofSection />
-
-      {/* ⑥ Integrations strip + See All Integrations */}
-      <IntegrationsSection />
-
-      {/* ⑦ Testimonials carousel */}
+      <HRProblemsSection />
+      <ProductModulesSection />
+      <CoreHRFeatureSection />
+      <AttendanceLeaveSection />
+      <PayrollSection />
+      <EmployeeSelfServiceSection />
+      <RecruitmentOnboardingSection />
+      <PerformanceSection />
+      <ReportingSection />
+      <WhyHRMSMitraSection />
+      <HowItWorksSection />
+      <IndustriesSection />
       <TestimonialsSection />
-
-      {/* ⑧ FAQ with schema.org FAQPage markup */}
       <FAQSection />
-
-      {/* ⑨ Final CTA band — Start Free Trial / Book a Demo */}
       <FinalCTASection />
     </>
   )

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import Breadcrumbs from '@/components/shared/Breadcrumbs'
+import Image from 'next/image'
 
 interface Challenge {
   title: string
@@ -21,9 +22,11 @@ interface RelevantModule {
 interface IndustryPageLayoutProps {
   breadcrumbs: Array<{ label: string; href: string }>
   badge: string
-  icon: React.ReactNode
+  icon?: React.ReactNode
   title: string
   description: string
+  heroImage?: string
+  heroImageAlt?: string
   challenges: Challenge[]
   solutions: Solution[]
   modules: RelevantModule[]
@@ -37,6 +40,8 @@ export default function IndustryPageLayout({
   icon,
   title,
   description,
+  heroImage,
+  heroImageAlt,
   challenges,
   solutions,
   modules,
@@ -47,49 +52,111 @@ export default function IndustryPageLayout({
     <>
       <Breadcrumbs items={breadcrumbs} />
       
-      {/* Hero Section */}
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
+      {/* Hero Section - Two-column SaaS style */}
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-background-alt to-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-light rounded-2xl mb-6">
-              {icon}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Content */}
+            <div className="order-2 lg:order-1">
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-6">
+                <span className="text-sm font-semibold text-primary">{badge}</span>
+              </div>
+              
+              {/* H1 Heading */}
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-heading mb-6 leading-tight">
+                {title}
+              </h1>
+              
+              {/* Description */}
+              <p className="text-xl text-text-body leading-relaxed mb-8">
+                {description}
+              </p>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  href="/book-demo" 
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary hover:bg-primary-hover rounded-full shadow-soft hover:shadow-medium transition-all duration-200 group"
+                >
+                  Get a Demo
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link 
+                  href="/features" 
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary bg-white hover:bg-primary-extra-light rounded-full border-2 border-primary-light hover:border-primary transition-all duration-200 group"
+                >
+                  Explore Features
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
-            <div className="inline-flex items-center px-4 py-2 bg-primary-light rounded-full mb-6">
-              <span className="text-sm font-medium text-primary">{badge}</span>
+            
+            {/* Right Image */}
+            <div className="order-1 lg:order-2">
+              {heroImage ? (
+                <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-large">
+                  <Image
+                    src={heroImage}
+                    alt={heroImageAlt || title}
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: 'center' }}
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  />
+                </div>
+              ) : icon ? (
+                <div className="flex items-center justify-center w-full h-[300px] sm:h-[400px] lg:h-[500px] bg-gradient-to-br from-primary-extra-light to-white rounded-3xl shadow-large">
+                  <div className="w-32 h-32 text-primary">
+                    {icon}
+                  </div>
+                </div>
+              ) : null}
             </div>
-            <h1 className="mb-6">{title}</h1>
-            <p className="text-xl text-text-body leading-relaxed">{description}</p>
           </div>
         </div>
       </section>
       
-      {/* HR Challenges */}
-      <section className="section-alt">
+      {/* HR Challenges - Cream cards */}
+      <section className="section">
         <div className="container-custom">
-          <h2 className="text-center mb-12">Common HR Challenges</h2>
+          <h2 className="text-center font-serif text-4xl md:text-5xl text-text-heading mb-16">
+            Common HR challenges
+          </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {challenges.map((challenge, index) => (
-              <div key={index} className="bg-background-alt rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-3 text-error">{challenge.title}</h3>
-                <p className="text-text-body">{challenge.description}</p>
+              <div key={index} className="card-cream p-8">
+                <h3 className="text-xl font-semibold text-text-heading mb-3">
+                  {challenge.title}
+                </h3>
+                <p className="text-text-body leading-relaxed">
+                  {challenge.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* How HRMS Mitra Helps */}
-      <section className="section">
+      {/* How HRMS Mitra Helps - White cards with checkmarks */}
+      <section className="section-alt">
         <div className="container-custom">
-          <h2 className="text-center mb-12">How HRMS Mitra Helps</h2>
-          <div className="space-y-8 max-w-5xl mx-auto">
+          <h2 className="text-center font-serif text-4xl md:text-5xl text-text-heading mb-16">
+            How HRMS Mitra helps
+          </h2>
+          <div className="space-y-6 max-w-4xl mx-auto">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-background-alt rounded-xl p-8">
-                <div className="flex items-start space-x-4">
-                  <CheckCircle className="w-8 h-8 text-success flex-shrink-0 mt-1" />
+              <div key={index} className="card-white p-8">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-8 h-8 text-primary flex-shrink-0 mt-1" strokeWidth={1.5} />
                   <div>
-                    <h3 className="text-2xl font-semibold mb-3">{solution.title}</h3>
-                    <p className="text-text-body text-lg">{solution.description}</p>
+                    <h3 className="text-2xl font-semibold text-text-heading mb-3">
+                      {solution.title}
+                    </h3>
+                    <p className="text-text-body text-lg leading-relaxed">
+                      {solution.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -98,71 +165,68 @@ export default function IndustryPageLayout({
         </div>
       </section>
       
-      {/* Relevant Modules */}
-      <section className="section-alt">
+      {/* Relevant Modules - Cream cards with hover */}
+      <section className="section">
         <div className="container-custom">
-          <h2 className="text-center mb-12">Relevant HRMS Modules</h2>
+          <h2 className="text-center font-serif text-4xl md:text-5xl text-text-heading mb-16">
+            Relevant modules
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {modules.map((module, index) => (
               <Link
                 key={index}
                 href={module.href}
-                className="bg-background-alt rounded-xl p-6 group block"
+                className="card-cream-hover group p-8"
               >
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-semibold text-text-heading mb-3 group-hover:text-primary transition-colors">
                   {module.name}
                 </h3>
-                <p className="text-text-body mb-4">{module.description}</p>
-                <div className="flex items-center text-primary font-medium">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
+                <p className="text-text-body mb-4 leading-relaxed">
+                  {module.description}
+                </p>
+                <span className="inline-flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                  Learn more
+                  <ArrowRight className="w-4 h-4" />
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
       
-      {/* Key Benefits */}
-      <section className="section">
-        <div className="container-custom">
-          <h2 className="text-center mb-12">Key Benefits for Your Industry</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3 bg-background-alt p-6 rounded-xl">
-                <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-text-body text-lg">{benefit}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* FAQs */}
+      {/* FAQs - Cream cards */}
       <section className="section-alt">
         <div className="container-custom">
-          <h2 className="text-center mb-12">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <h2 className="text-center font-serif text-4xl md:text-5xl text-text-heading mb-16">
+            Frequently asked questions
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-background-alt rounded-xl p-6">
-                <h3 className="font-semibold text-text-heading mb-3">{faq.question}</h3>
-                <p className="text-text-body">{faq.answer}</p>
+              <div key={index} className="card-cream p-8">
+                <h3 className="font-semibold text-text-heading text-lg mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-text-body leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="section bg-gradient-to-br from-primary to-primary-medium text-white">
+      {/* CTA Section - Clean green */}
+      <section className="section bg-primary text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-white mb-6">Ready to Transform Your HR Operations?</h2>
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
+              Ready to transform your HR operations?
+            </h2>
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              See how HRMS Mitra can address your industry-specific HR challenges with tailored solutions.
+              See how HRMS Mitra can address your industry-specific HR challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/book-demo" className="btn bg-white text-primary hover:bg-primary-extra-light btn-lg">
+              <Link href="/book-demo" className="btn bg-white text-primary hover:bg-background-alt btn-lg shadow-soft">
                 Book a Demo
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>

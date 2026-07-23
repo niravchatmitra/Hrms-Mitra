@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Breadcrumbs from '@/components/shared/Breadcrumbs'
 import { Puzzle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -11,28 +10,22 @@ export const metadata: Metadata = {
 export default function IntegrationsPage() {
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Integrations', href: '/integrations' },
-        ]}
-      />
-      
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
-        <div className="container-custom">
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-light rounded-full mb-6">
-              <Puzzle className="w-10 h-10 text-primary" />
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+              <Puzzle className="w-10 h-10 text-white" />
             </div>
-            <h1 className="mb-6">Connect HRMS Mitra With Your Tools</h1>
-            <p className="text-xl text-text-body leading-relaxed">
+            <h1 className="mb-6 text-white">Connect HRMS Mitra With Your Tools</h1>
+            <p className="text-xl text-white/90 leading-relaxed">
               Integrate HRMS Mitra with your existing business systems for seamless data flow and automation.
             </p>
           </div>
         </div>
       </section>
       
-      <section className="section-alt">
+      <section className="py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="card p-8 text-center">
@@ -60,14 +53,14 @@ export default function IntegrationsPage() {
         </div>
       </section>
       
-      <section className="section">
+      <section className="py-12 bg-primary">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center card p-8">
-            <h2 className="text-2xl font-semibold mb-4">Need a Custom Integration?</h2>
-            <p className="text-text-body mb-6">
+          <div className="max-w-3xl mx-auto text-center bg-white/10 backdrop-blur-sm rounded-xl p-8">
+            <h2 className="text-2xl font-semibold mb-4 text-white">Need a Custom Integration?</h2>
+            <p className="text-white/90 mb-6">
               Our team can help you build custom integrations tailored to your specific business processes and systems.
             </p>
-            <Link href="/contact" className="btn-secondary">
+            <Link href="/contact" className="btn-secondary bg-white/10 text-white border-white hover:bg-white/20">
               Contact Integration Team
             </Link>
           </div>

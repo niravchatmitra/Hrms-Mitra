@@ -1,79 +1,79 @@
-import { Building2, Code, Factory, ShoppingBag, Heart, GraduationCap, Truck, Briefcase } from 'lucide-react'
+import { Rocket, Lock, Zap, BarChart3, Smartphone, MapPin } from 'lucide-react'
 
-// Fake "client" logos rendered as stylized text placeholders
-const clients = [
-  { name: 'TechVista', industry: 'IT' },
-  { name: 'FastTrack', industry: 'Logistics' },
-  { name: 'Sunrise Pharma', industry: 'Pharma' },
-  { name: 'DigitalFirst', industry: 'Agency' },
-  { name: 'GreenBuild', industry: 'Construction' },
-  { name: 'EduSpark', industry: 'EdTech' },
-  { name: 'MediCare+', industry: 'Healthcare' },
-  { name: 'RetailPro', industry: 'Retail' },
-]
-
-const industries = [
-  { icon: Code, label: 'IT & SaaS', count: '120+' },
-  { icon: Factory, label: 'Manufacturing', count: '85+' },
-  { icon: Truck, label: 'Logistics', count: '60+' },
-  { icon: ShoppingBag, label: 'Retail', count: '70+' },
-  { icon: Heart, label: 'Healthcare', count: '55+' },
-  { icon: GraduationCap, label: 'Education', count: '45+' },
-  { icon: Building2, label: 'Startups', count: '90+' },
-  { icon: Briefcase, label: 'Professional Services', count: '75+' },
+const features = [
+  {
+    icon: Rocket,
+    title: 'Fast Implementation',
+    description: 'Set up your company, departments, employees, and policies within minutes. No complicated configuration required.',
+  },
+  {
+    icon: Lock,
+    title: 'Secure & Reliable',
+    description: 'Role-based access, secure cloud infrastructure, audit logs, and enterprise-grade data protection keep your HR data safe.',
+  },
+  {
+    icon: Zap,
+    title: 'Automate HR Operations',
+    description: 'Automate attendance, leave management, payroll, onboarding, employee records, and HR workflows from one platform.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Real-time Reports',
+    description: 'Generate powerful HR reports and analytics instantly.',
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile Friendly',
+    description: 'Manage your workforce anytime from desktop, tablet, or mobile.',
+  },
+  {
+    icon: MapPin,
+    title: 'Built for Indian Businesses',
+    description: 'Designed for Indian payroll, attendance, compliance, and growing companies.',
+  },
 ]
 
 export default function ClientTrustSection() {
   return (
-    <section className="py-16 bg-background-alt border-y border-border">
+    <section className="py-20 lg:py-24 bg-gradient-to-b from-white to-background-alt">
       <div className="container-custom">
-        {/* Top line */}
-        <p className="text-center text-sm font-semibold text-text-muted uppercase tracking-widest mb-8">
-          Trusted by 500+ growing Indian businesses
-        </p>
-
-        {/* Scrolling client logo row */}
-        <div className="relative overflow-hidden mb-12">
-          <div className="flex gap-6 items-center animate-[marquee_25s_linear_infinite] whitespace-nowrap">
-            {[...clients, ...clients].map((c, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 bg-white rounded-xl border border-border px-5 py-3 shadow-soft flex items-center gap-2"
-              >
-                <span className="text-lg">🏢</span>
-                <span className="text-sm font-bold text-text-heading">{c.name}</span>
-                <span className="text-[10px] text-text-muted bg-background-alt rounded-full px-1.5 py-0.5">{c.industry}</span>
-              </div>
-            ))}
-          </div>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl text-text-heading mb-6 leading-tight">
+            Why Growing Businesses Choose HRMS Mitra
+          </h2>
+          <p className="text-xl text-text-body leading-relaxed">
+            Everything your HR team needs to manage employees faster, smarter, and more efficiently.
+          </p>
         </div>
 
-        {/* Industry grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-          {industries.map((ind) => {
-            const Icon = ind.icon
+        {/* Feature Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {features.map((feature, index) => {
+            const Icon = feature.icon
             return (
               <div
-                key={ind.label}
-                className="flex flex-col items-center justify-center p-4 bg-white rounded-xl border border-border hover:border-primary/30 hover:shadow-soft transition-all cursor-default text-center"
+                key={index}
+                className="group bg-white rounded-[20px] p-8 shadow-soft hover:shadow-large hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary/10"
               >
-                <div className="w-9 h-9 bg-primary-extra-light rounded-lg flex items-center justify-center mb-2">
-                  <Icon className="w-4 h-4 text-primary" />
+                {/* Icon Circle - Consistent Brand Color */}
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary-hover transition-all duration-300 shadow-soft">
+                  <Icon className="w-8 h-8 text-white" strokeWidth={2} />
                 </div>
-                <div className="text-xs font-semibold text-text-heading leading-tight">{ind.label}</div>
-                <div className="text-[10px] text-primary font-bold mt-0.5">{ind.count} teams</div>
+
+                {/* Title */}
+                <h3 className="text-2xl font-semibold text-text-heading mb-4 leading-tight">
+                  {feature.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-text-body leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             )
           })}
         </div>
-
-        {/* Style tag for marquee animation */}
-        <style>{`
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-        `}</style>
       </div>
     </section>
   )

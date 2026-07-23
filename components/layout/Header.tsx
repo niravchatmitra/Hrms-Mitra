@@ -2,21 +2,17 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Search, ChevronDown } from 'lucide-react'
-import { NAVIGATION } from '@/lib/constants'
-import { getHRMSAppUrl } from '@/lib/utils'
+import { Menu, X, ChevronDown, Bell } from 'lucide-react'
 import Logo from '@/components/shared/Logo'
 import ProductsMegaMenu from './mega-menus/ProductsMegaMenu'
 import SolutionsMegaMenu from './mega-menus/SolutionsMegaMenu'
 import ResourcesMenu from './mega-menus/ResourcesMenu'
 import CompanyMenu from './mega-menus/CompanyMenu'
 import MobileMenu from './MobileMenu'
-import SearchOverlay from '@/components/shared/SearchOverlay'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
 
   useEffect(() => {
@@ -45,39 +41,22 @@ export default function Header() {
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="bg-primary-dark text-white py-2.5 px-4">
-        <div className="container-custom flex items-center justify-center text-sm">
-          <p className="text-center text-white">
-            Make HR effortless with HRMS Mitra — Book your free product demo today.
-            <a
-              href={getHRMSAppUrl('/book-demo')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-2 underline hover:text-primary-light font-medium text-white"
-            >
-              Book Demo
-            </a>
-          </p>
-        </div>
-      </div>
-
-      {/* Main Header */}
+      {/* Main Header - Compact for 1366×768 */}
       <header
-        className={`sticky top-0 z-50 bg-primary text-white transition-all duration-200 ${
-          isScrolled ? 'shadow-lg' : ''
+        className={`sticky top-0 z-50 bg-white border-b border-border-light transition-shadow duration-200 ${
+          isScrolled ? 'shadow-sm' : ''
         }`}
       >
-        <nav className="container-custom">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
-              <Logo className="text-white" />
+        <nav className="mx-auto max-w-[1280px] px-5">
+          <div className="flex items-center justify-between h-[72px]">
+            {/* Logo - Never wraps */}
+            <Link href="/" className="flex-shrink-0">
+              <Logo variant="light" />
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1">
-              {/* Products */}
+            {/* Desktop Navigation - Compact spacing */}
+            <div className="hidden xl:flex items-center flex-1 justify-center min-w-0 gap-1">
+              {/* Our Platform */}
               <div
                 className="relative"
                 onMouseEnter={() => handleMenuEnter('products')}
@@ -87,13 +66,21 @@ export default function Header() {
                   type="button"
                   aria-expanded={activeMenu === 'products'}
                   aria-haspopup="true"
-                  className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="px-3 py-2 rounded-lg hover:bg-background-alt text-text-heading font-semibold text-[15px] flex items-center gap-1 transition-colors whitespace-nowrap"
                 >
-                  <span className="font-medium">Products</span>
-                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                  <span>Our Platform</span>
+                  <ChevronDown className="w-3.5 h-3.5" />
                 </button>
                 {activeMenu === 'products' && <ProductsMegaMenu />}
               </div>
+
+              {/* Pricing */}
+              <Link
+                href="/pricing"
+                className="px-3 py-2 rounded-lg hover:bg-background-alt text-text-heading font-semibold text-[15px] transition-colors whitespace-nowrap"
+              >
+                Pricing
+              </Link>
 
               {/* Solutions */}
               <div
@@ -105,28 +92,20 @@ export default function Header() {
                   type="button"
                   aria-expanded={activeMenu === 'solutions'}
                   aria-haspopup="true"
-                  className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="px-3 py-2 rounded-lg hover:bg-background-alt text-text-heading font-semibold text-[15px] flex items-center gap-1 transition-colors whitespace-nowrap"
                 >
-                  <span className="font-medium">Solutions</span>
-                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                  <span>Solutions</span>
+                  <ChevronDown className="w-3.5 h-3.5" />
                 </button>
                 {activeMenu === 'solutions' && <SolutionsMegaMenu />}
               </div>
 
-              {/* Pricing */}
+              {/* Why HRMS Mitra - Shortened */}
               <Link
-                href="/pricing"
-                className="px-4 py-2 rounded-lg hover:bg-primary-hover font-medium transition-colors"
+                href="/about"
+                className="px-3 py-2 rounded-lg hover:bg-background-alt text-text-heading font-semibold text-[15px] transition-colors whitespace-nowrap"
               >
-                Pricing
-              </Link>
-
-              {/* Integrations */}
-              <Link
-                href="/integrations"
-                className="px-4 py-2 rounded-lg hover:bg-primary-hover font-medium transition-colors"
-              >
-                Integrations
+                Why HRMS Mitra
               </Link>
 
               {/* Resources */}
@@ -139,15 +118,15 @@ export default function Header() {
                   type="button"
                   aria-expanded={activeMenu === 'resources'}
                   aria-haspopup="true"
-                  className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="px-3 py-2 rounded-lg hover:bg-background-alt text-text-heading font-semibold text-[15px] flex items-center gap-1 transition-colors whitespace-nowrap"
                 >
-                  <span className="font-medium">Resources</span>
-                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                  <span>Resources</span>
+                  <ChevronDown className="w-3.5 h-3.5" />
                 </button>
                 {activeMenu === 'resources' && <ResourcesMenu />}
               </div>
 
-              {/* Company */}
+              {/* About */}
               <div
                 className="relative"
                 onMouseEnter={() => handleMenuEnter('company')}
@@ -157,57 +136,71 @@ export default function Header() {
                   type="button"
                   aria-expanded={activeMenu === 'company'}
                   aria-haspopup="true"
-                  className="px-4 py-2 rounded-lg hover:bg-primary-hover flex items-center space-x-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="px-3 py-2 rounded-lg hover:bg-background-alt text-text-heading font-semibold text-[15px] flex items-center gap-1 transition-colors whitespace-nowrap"
                 >
-                  <span className="font-medium">Company</span>
-                  <ChevronDown className="w-4 h-4" aria-hidden="true" />
+                  <span>About</span>
+                  <ChevronDown className="w-3.5 h-3.5" />
                 </button>
                 {activeMenu === 'company' && <CompanyMenu />}
               </div>
             </div>
 
-            {/* Right Actions */}
-            <div className="flex items-center space-x-3">
-              {/* Search */}
+            {/* Right Actions - Compact */}
+            <div className="flex items-center gap-2 flex-shrink-0">
+              {/* Country Selector - Hidden on smaller desktops */}
               <button
                 type="button"
-                onClick={() => setIsSearchOpen(true)}
-                className="p-2 rounded-lg hover:bg-primary-hover transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-                aria-label="Search"
+                className="hidden 2xl:flex items-center gap-1 px-2 py-1.5 rounded-lg hover:bg-background-alt transition-colors"
               >
-                <Search className="w-5 h-5" />
+                <span className="text-lg">🇮🇳</span>
+                <ChevronDown className="w-3.5 h-3.5 text-text-muted" />
               </button>
 
-              {/* Login */}
-              <a
-                href={getHRMSAppUrl('/login')}
-                className="hidden md:inline-flex px-4 py-2 rounded-lg hover:bg-primary-hover font-medium transition-colors"
+              {/* Notifications - Hidden on smaller desktops */}
+              <button
+                type="button"
+                className="hidden 2xl:block p-2 rounded-lg hover:bg-background-alt transition-colors"
+                aria-label="Notifications"
               >
-                Login
+                <Bell className="w-4 h-4 text-text-heading" />
+              </button>
+
+              {/* Phone Number - Hidden below 1450px */}
+              <a
+                href="tel:+917900000000"
+                className="hidden 2xl:inline-flex items-center text-primary font-semibold text-[14px] hover:text-primary-hover transition-colors whitespace-nowrap"
+              >
+                +91 79 0000 0000
               </a>
 
-              {/* Get Free Demo */}
-              <a
-                href={getHRMSAppUrl('/book-demo')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:inline-flex btn bg-white text-primary hover:bg-primary-extra-light btn-sm"
+              {/* Log In - Compact */}
+              <Link
+                href="/login"
+                className="hidden xl:inline-flex items-center justify-center px-4 h-[40px] rounded-full border-2 border-primary text-primary font-semibold text-[14px] hover:bg-primary-extra-light transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
-                Get Free Demo
-              </a>
+                Log In
+              </Link>
+
+              {/* Get a Demo - Compact */}
+              <Link
+                href="/book-demo"
+                className="hidden xl:inline-flex items-center justify-center px-5 h-[40px] rounded-full bg-primary text-white font-semibold text-[14px] hover:bg-primary-hover transition-all shadow-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              >
+                Get a Demo
+              </Link>
 
               {/* Mobile Menu Toggle */}
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg hover:bg-primary-hover transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                className="xl:hidden p-2 rounded-lg hover:bg-background-alt transition-colors"
                 aria-label="Toggle menu"
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6" />
+                  <X className="w-6 h-6 text-text-heading" />
                 ) : (
-                  <Menu className="w-6 h-6" />
+                  <Menu className="w-6 h-6 text-text-heading" />
                 )}
               </button>
             </div>
@@ -219,12 +212,6 @@ export default function Header() {
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
-      />
-
-      {/* Search Overlay */}
-      <SearchOverlay
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
       />
     </>
   )

@@ -19,25 +19,14 @@ export default function ContactPage() {
         ]}
       />
       
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
+      <section className="py-12 bg-background-alt">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Get in Touch</h1>
-            <p className="text-xl text-text-body leading-relaxed">
-              Have questions about HRMS Mitra? Our team is here to help. Reach out and we&apos;ll respond as soon as possible.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <section className="section-alt">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-8">
             {/* Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-primary-extra-light rounded-lg flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-primary" />
@@ -95,10 +84,10 @@ export default function ContactPage() {
               </div>
             </div>
             
-            {/* Contact Form */}
+            {/* Contact Form - Green Background */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-xl border border-border p-8">
-                <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
+              <div className="bg-primary rounded-2xl shadow-xl p-8">
+                <h2 className="text-2xl font-semibold mb-6 text-white">Send us a Message</h2>
                 <ContactForm />
               </div>
             </div>

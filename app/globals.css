@@ -5,6 +5,16 @@
 @layer base {
   :root {
     --font-manrope: 'Manrope', 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+    
+    /* ChatMitra Brand Colors */
+    --brand-primary: #075E54;
+    --brand-primary-hover: #06483F;
+    --brand-dark: #053F37;
+    --brand-accent: #8DD63F;
+    --brand-light: #F0F8F6;
+    --brand-soft: #E5F2EF;
+    --brand-border: #C9DDD8;
+    --brand-text: #17332D;
   }
 
   * {
@@ -18,35 +28,43 @@
   body {
     @apply bg-background-main text-text-body antialiased;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
+  /* BambooHR-style typography - Serif for headings */
   h1, h2, h3, h4, h5, h6 {
-    @apply text-text-heading font-semibold;
+    @apply text-text-heading font-serif font-semibold;
+    line-height: 1.2;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    font-weight: 600;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    font-weight: 600;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl leading-snug;
+    @apply text-2xl md:text-3xl;
+    font-weight: 600;
   }
 
   h4 {
-    @apply text-xl md:text-2xl leading-snug;
+    @apply text-xl md:text-2xl;
+    font-weight: 600;
   }
 
   h5 {
-    @apply text-lg md:text-xl leading-normal;
+    @apply text-lg md:text-xl;
+    font-weight: 600;
   }
 
   h6 {
-    @apply text-base md:text-lg leading-normal;
+    @apply text-base md:text-lg;
+    font-weight: 600;
   }
 
   p {
@@ -67,12 +85,14 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* BambooHR-style buttons */
   .btn {
     @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    font-family: var(--font-manrope);
   }
 
   .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary-hover focus:ring-primary;
+    @apply btn bg-primary text-white hover:bg-primary-hover focus:ring-primary shadow-sm;
     @apply px-6 py-3 text-base;
   }
 
@@ -82,7 +102,7 @@
   }
 
   .btn-accent {
-    @apply btn bg-accent-coral text-white hover:bg-[#D66A2F] focus:ring-accent-coral;
+    @apply btn bg-accent-coral text-white hover:bg-[#D66A45] focus:ring-accent-coral shadow-sm;
     @apply px-6 py-3 text-base;
   }
 
@@ -94,72 +114,143 @@
     @apply px-8 py-4 text-lg;
   }
 
-  /* Flat light-green cards - ChatMitra style */
-  .card-flat {
-    @apply bg-primary-light rounded-2xl p-6 transition-all duration-200;
+  /* BambooHR-style cream cards */
+  .card-cream {
+    @apply bg-background-alt rounded-2xl p-8 transition-all duration-200;
   }
 
-  .card-flat :is(p, .text-text-body) {
-    @apply text-text-heading/80;
+  .card-cream-hover {
+    @apply card-cream hover:shadow-soft hover:-translate-y-0.5;
   }
 
-  /* White cards with shadow on hover only */
-  .card {
-    @apply bg-white rounded-xl p-6 transition-all duration-200;
+  /* White cards with subtle shadow */
+  .card-white {
+    @apply bg-white rounded-2xl p-8 shadow-soft transition-all duration-200;
   }
 
-  .card-hover {
-    @apply card hover:shadow-lg hover:-translate-y-1;
+  .card-white-hover {
+    @apply card-white hover:shadow-medium hover:-translate-y-0.5;
   }
 
-  /* Mega menu dropdown item */
+  /* Mega menu - BambooHR two-column style */
+  .mega-menu-section {
+    @apply flex flex-col gap-3;
+  }
+
+  .mega-menu-heading {
+    @apply text-xs font-semibold uppercase tracking-wide text-text-muted mb-2;
+    font-family: var(--font-manrope);
+  }
+
   .mega-menu-item {
-    @apply flex items-start gap-4 p-4 rounded-lg hover:bg-primary-extra-light transition-all duration-200 cursor-pointer;
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-background-alt transition-all duration-150 cursor-pointer;
   }
 
   .mega-menu-icon {
-    @apply w-10 h-10 flex items-center justify-center rounded-lg bg-white border-2 border-primary flex-shrink-0;
+    @apply w-5 h-5 text-primary flex-shrink-0;
   }
 
   .section {
-    @apply py-20 md:py-28;
+    @apply py-16 md:py-24 lg:py-32;
   }
 
   .section-alt {
     @apply section bg-background-alt;
   }
 
-  /* Dark green banner with dot pattern */
-  .banner-dark {
-    @apply bg-primary text-white relative overflow-hidden;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+  /* Decorative curved connector - BambooHR style */
+  .curved-connector {
+    @apply relative;
+  }
+
+  .curved-connector::after {
+    content: '';
+    @apply absolute w-32 h-32 border-4 border-accent-purple rounded-full opacity-20;
+  }
+
+  /* Product mockup shadow - BambooHR style */
+  .mockup-shadow {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.08);
   }
 
   .input {
-    @apply w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 bg-white;
   }
 
   .label {
     @apply block text-sm font-medium text-text-heading mb-2;
+    font-family: var(--font-manrope);
   }
 
   .error-message {
     @apply text-error text-sm mt-1;
   }
+
+  /* Line-art icon style */
+  .icon-line-art {
+    @apply w-12 h-12 text-primary;
+    stroke-width: 1.5;
+  }
 }
 
 @layer utilities {
-  .text-gradient {
+  .text-gradient-green {
     @apply bg-gradient-to-r from-primary to-primary-medium bg-clip-text text-transparent;
   }
 
   .shadow-soft {
-    box-shadow: 0 4px 20px rgba(7, 94, 84, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   }
 
   .shadow-medium {
-    box-shadow: 0 8px 30px rgba(7, 94, 84, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-large {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* BambooHR-style gradient background */
+  .bg-gradient-cream {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F7F7F5 100%);
+  }
+
+  /* Scrollbar hide utility */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Fade-in animation for content transitions */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  /* Fade-in-up animation for list items */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 

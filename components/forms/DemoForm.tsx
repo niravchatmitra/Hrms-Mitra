@@ -57,109 +57,109 @@ export default function DemoForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="label">
+          <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
             Full Name *
           </label>
           <input
             {...register('name')}
             type="text"
             id="name"
-            className="input"
+            className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white placeholder-white/50 backdrop-blur-sm"
             placeholder="John Doe"
           />
-          {errors.name && <p className="error-message">{errors.name.message}</p>}
+          {errors.name && <p className="text-red-200 text-sm mt-1">{errors.name.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="email" className="label">
+          <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
             Work Email *
           </label>
           <input
             {...register('email')}
             type="email"
             id="email"
-            className="input"
+            className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white placeholder-white/50 backdrop-blur-sm"
             placeholder="john@company.com"
           />
-          {errors.email && <p className="error-message">{errors.email.message}</p>}
+          {errors.email && <p className="text-red-200 text-sm mt-1">{errors.email.message}</p>}
         </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="phone" className="label">
+          <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
             Phone Number *
           </label>
           <input
             {...register('phone')}
             type="tel"
             id="phone"
-            className="input"
+            className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white placeholder-white/50 backdrop-blur-sm"
             placeholder="+91-9876543210"
           />
-          {errors.phone && <p className="error-message">{errors.phone.message}</p>}
+          {errors.phone && <p className="text-red-200 text-sm mt-1">{errors.phone.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="company" className="label">
+          <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
             Company Name *
           </label>
           <input
             {...register('company')}
             type="text"
             id="company"
-            className="input"
+            className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white placeholder-white/50 backdrop-blur-sm"
             placeholder="Your Company"
           />
-          {errors.company && <p className="error-message">{errors.company.message}</p>}
+          {errors.company && <p className="text-red-200 text-sm mt-1">{errors.company.message}</p>}
         </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="employeeCount" className="label">
+          <label htmlFor="employeeCount" className="block text-sm font-medium text-white mb-2">
             Number of Employees *
           </label>
-          <select {...register('employeeCount')} id="employeeCount" className="input">
-            <option value="">Select employee count</option>
+          <select {...register('employeeCount')} id="employeeCount" className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white backdrop-blur-sm">
+            <option value="" className="bg-primary text-white">Select employee count</option>
             {EMPLOYEE_RANGES.map((range) => (
-              <option key={range.id} value={range.value}>
+              <option key={range.id} value={range.value} className="bg-primary text-white">
                 {range.label}
               </option>
             ))}
           </select>
-          {errors.employeeCount && <p className="error-message">{errors.employeeCount.message}</p>}
+          {errors.employeeCount && <p className="text-red-200 text-sm mt-1">{errors.employeeCount.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="jobTitle" className="label">
+          <label htmlFor="jobTitle" className="block text-sm font-medium text-white mb-2">
             Job Title
           </label>
           <input
             {...register('jobTitle')}
             type="text"
             id="jobTitle"
-            className="input"
+            className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white placeholder-white/50 backdrop-blur-sm"
             placeholder="HR Manager"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="city" className="label">
+        <label htmlFor="city" className="block text-sm font-medium text-white mb-2">
           City
         </label>
         <input
           {...register('city')}
           type="text"
           id="city"
-          className="input"
+          className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white placeholder-white/50 backdrop-blur-sm"
           placeholder="Mumbai"
         />
       </div>
 
       <div>
-        <label className="label">Interested Modules (Optional)</label>
+        <label className="block text-sm font-medium text-white mb-2">Interested Modules (Optional)</label>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {FEATURES.slice(0, 6).map((feature) => (
             <label key={feature.id} className="flex items-center space-x-2 text-sm">
@@ -167,9 +167,9 @@ export default function DemoForm() {
                 type="checkbox"
                 value={feature.id}
                 {...register('modules')}
-                className="w-4 h-4 rounded border-border"
+                className="w-4 h-4 rounded border-white/20 bg-white/10 text-primary focus:ring-white/50"
               />
-              <span className="text-text-body">{feature.name}</span>
+              <span className="text-white/90">{feature.name}</span>
             </label>
           ))}
         </div>
@@ -177,42 +177,42 @@ export default function DemoForm() {
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="preferredDate" className="label">
+          <label htmlFor="preferredDate" className="block text-sm font-medium text-white mb-2">
             Preferred Date
           </label>
           <input
             {...register('preferredDate')}
             type="date"
             id="preferredDate"
-            className="input"
+            className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white backdrop-blur-sm"
             min={new Date().toISOString().split('T')[0]}
           />
         </div>
 
         <div>
-          <label htmlFor="preferredTime" className="label">
+          <label htmlFor="preferredTime" className="block text-sm font-medium text-white mb-2">
             Preferred Time
           </label>
-          <select {...register('preferredTime')} id="preferredTime" className="input">
-            <option value="">Select time slot</option>
-            <option value="10:00-11:00">10:00 AM - 11:00 AM</option>
-            <option value="11:00-12:00">11:00 AM - 12:00 PM</option>
-            <option value="14:00-15:00">2:00 PM - 3:00 PM</option>
-            <option value="15:00-16:00">3:00 PM - 4:00 PM</option>
-            <option value="16:00-17:00">4:00 PM - 5:00 PM</option>
+          <select {...register('preferredTime')} id="preferredTime" className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white backdrop-blur-sm">
+            <option value="" className="bg-primary text-white">Select time slot</option>
+            <option value="10:00-11:00" className="bg-primary text-white">10:00 AM - 11:00 AM</option>
+            <option value="11:00-12:00" className="bg-primary text-white">11:00 AM - 12:00 PM</option>
+            <option value="14:00-15:00" className="bg-primary text-white">2:00 PM - 3:00 PM</option>
+            <option value="15:00-16:00" className="bg-primary text-white">3:00 PM - 4:00 PM</option>
+            <option value="16:00-17:00" className="bg-primary text-white">4:00 PM - 5:00 PM</option>
           </select>
         </div>
       </div>
 
       <div>
-        <label htmlFor="message" className="label">
+        <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
           Message (Optional)
         </label>
         <textarea
           {...register('message')}
           id="message"
           rows={4}
-          className="input"
+          className="w-full px-4 py-3 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-200 bg-white/10 text-white placeholder-white/50 backdrop-blur-sm"
           placeholder="Tell us about your HR challenges or specific requirements..."
         />
       </div>
@@ -222,17 +222,17 @@ export default function DemoForm() {
           {...register('consent')}
           type="checkbox"
           id="consent"
-          className="w-5 h-5 rounded border-border mt-0.5"
+          className="w-5 h-5 rounded border-white/20 mt-0.5 bg-white/10 text-primary focus:ring-white/50"
         />
-        <label htmlFor="consent" className="text-sm text-text-body">
+        <label htmlFor="consent" className="text-sm text-white/90">
           I agree to the{' '}
-          <Link href="/privacy-policy" className="text-primary hover:underline">
+          <Link href="/privacy-policy" className="text-white underline hover:text-white/80">
             Privacy Policy
           </Link>{' '}
           and consent to being contacted by HRMS Mitra.
         </label>
       </div>
-      {errors.consent && <p className="error-message">{errors.consent.message}</p>}
+      {errors.consent && <p className="text-red-200 text-sm">{errors.consent.message}</p>}
 
       {/* Honeypot field */}
       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
@@ -240,19 +240,19 @@ export default function DemoForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="btn-primary w-full disabled:opacity-50"
+        className="w-full px-8 py-4 text-lg font-semibold text-primary bg-white hover:bg-white/90 rounded-xl shadow-soft hover:shadow-medium hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary disabled:opacity-50"
       >
         {isSubmitting ? 'Booking...' : 'Book Demo'}
       </button>
 
       {submitStatus === 'success' && (
-        <div className="p-4 bg-success/10 border border-success/20 rounded-lg text-success text-center">
+        <div className="p-4 bg-white/20 border border-white/30 rounded-lg text-white text-center backdrop-blur-sm">
           Demo booked! We&apos;ll contact you shortly to confirm.
         </div>
       )}
 
       {submitStatus === 'error' && (
-        <div className="p-4 bg-error/10 border border-error/20 rounded-lg text-error text-center">
+        <div className="p-4 bg-red-500/20 border border-red-300/30 rounded-lg text-red-100 text-center backdrop-blur-sm">
           Something went wrong. Please try again or contact us directly.
         </div>
       )}

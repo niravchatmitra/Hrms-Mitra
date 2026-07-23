@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Breadcrumbs from '@/components/shared/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'HR Glossary - Common HR Terms & Definitions | HRMS Mitra',
@@ -27,25 +26,19 @@ const glossaryTerms = [
 export default function HRGlossaryPage() {
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'HR Glossary', href: '/hr-glossary' },
-        ]}
-      />
-      
-      <section className="section bg-gradient-to-b from-primary-extra-light to-background-main">
-        <div className="container-custom">
+      <section className="py-12 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">HR Glossary</h1>
-            <p className="text-xl text-text-body leading-relaxed">
+            <h1 className="mb-6 text-white">HR Glossary</h1>
+            <p className="text-xl text-white/90 leading-relaxed">
               Common HR terms, acronyms, and definitions for Indian businesses and HR professionals.
             </p>
           </div>
         </div>
       </section>
       
-      <section className="section-alt">
+      <section className="py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-4">
@@ -57,7 +50,7 @@ export default function HRGlossaryPage() {
               ))}
             </div>
             
-            <div className="mt-12 p-6 bg-primary-extra-light rounded-xl text-center">
+            <div className="mt-8 p-6 bg-primary/5 rounded-xl text-center">
               <p className="text-text-body mb-4">
                 This glossary is continuously updated. If you&apos;d like us to add a specific term, please let us know.
               </p>

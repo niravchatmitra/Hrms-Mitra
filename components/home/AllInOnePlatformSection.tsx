@@ -163,8 +163,8 @@ const modules = [
     description: 'HRMS Mitra is the only Indian HRMS with deep WhatsApp integration. Send payslips, leave approvals, birthday wishes, policy updates and onboarding tasks — all delivered to the app employees already use, with no app install required.',
     points: ['Leave approval/rejection via WhatsApp', 'Payslip delivery & payroll alerts', 'Birthday, anniversary & policy reminders'],
     icon: MessageSquare,
-    iconColor: 'text-green-600',
-    iconBg: 'bg-green-50',
+    iconColor: 'text-primary',
+    iconBg: 'bg-primary-extra-light',
     visual: (
       <div className="bg-[#E5DDD5] rounded-2xl shadow-xl border border-border p-4 space-y-3">
         <div className="flex items-center gap-2 bg-[#075E54] rounded-t-xl -m-4 mb-3 px-4 py-3">

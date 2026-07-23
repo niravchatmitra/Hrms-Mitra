@@ -7,7 +7,6 @@ import AddOnsSection from '@/components/pricing/AddOnsSection'
 import ImplementationSection from '@/components/pricing/ImplementationSection'
 import PricingFAQ from '@/components/pricing/PricingFAQ'
 import PricingCTA from '@/components/pricing/PricingCTA'
-import Breadcrumbs from '@/components/shared/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Pricing - Affordable HRMS Plans for Every Business',
@@ -21,12 +20,6 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Pricing', href: '/pricing' },
-        ]}
-      />
       <PricingHero />
       <PricingCards />
       <EmployeeRangeSelector />

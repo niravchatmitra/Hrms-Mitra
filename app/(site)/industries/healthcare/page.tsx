@@ -19,6 +19,8 @@ export default function HealthcarePage() {
       icon={<Heart className="w-10 h-10 text-primary" />}
       title="HRMS for Healthcare and Medical Institutions"
       description="Manage your healthcare workforce effectively. Handle complex schedules, track medical certifications, manage on-call duties, and ensure staffing compliance."
+      heroImage="/images/industries/healthcare-hero.jpg"
+      heroImageAlt="Clean modern hospital corridor with medical equipment and healthcare facility environment"
       challenges={[
         { title: 'Complex Scheduling', description: 'Managing doctors, nurses, and support staff across 24/7 shifts and on-call rosters.' },
         { title: 'License Tracking', description: 'Tracking medical licenses, certifications, and training renewals for compliance.' },

@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <section className="section min-h-[70vh] flex items-center">
+    <section className="py-12 min-h-[70vh] flex items-center bg-primary/5">
       <div className="container-custom">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-success/10 rounded-full mb-6">
-            <CheckCircle className="w-12 h-12 text-success" />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6">
+            <CheckCircle className="w-12 h-12 text-primary" />
           </div>
           
           <h1 className="mb-6">Thank You!</h1>

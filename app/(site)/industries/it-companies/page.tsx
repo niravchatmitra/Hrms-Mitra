@@ -19,6 +19,8 @@ export default function ITCompaniesPage() {
       icon={<Code className="w-10 h-10 text-primary" />}
       title="HRMS for IT and Software Companies"
       description="Manage your tech talent effectively. Handle high-volume hiring, flexible work arrangements, skill tracking, and project-based performance reviews."
+      heroImage="/images/industries/it-companies-hero.jpg"
+      heroImageAlt="Modern IT and software company workspace with development monitors and coding environment"
       challenges={[
         { title: 'High Hiring Volume', description: 'Constant recruitment needs for developers, QA, designers, and other tech roles.' },
         { title: 'Remote & Hybrid Teams', description: 'Managing distributed teams across multiple locations and time zones.' },
